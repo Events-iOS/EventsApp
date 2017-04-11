@@ -51,6 +51,20 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		2C4CF2CD1E9C960A00F96E16 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		2C4CF2CE1E9C961400F96E16 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		2CB5C2401E66942100C27D36 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +86,8 @@
 		2CB5C24B1E66942100C27D36 /* Events */ = {
 			isa = PBXGroup;
 			children = (
+				2C4CF2CE1E9C961400F96E16 /* Model */,
+				2C4CF2CD1E9C960A00F96E16 /* ViewControllers */,
 				2CB5C24C1E66942100C27D36 /* AppDelegate.swift */,
 				2CB5C24E1E66942100C27D36 /* ViewController.swift */,
 				2CB5C2501E66942100C27D36 /* Main.storyboard */,
