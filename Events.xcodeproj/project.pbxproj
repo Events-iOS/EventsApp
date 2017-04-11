@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C4CF2CC1E9C948C00F96E16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CF2CB1E9C948C00F96E16 /* GoogleService-Info.plist */; };
 		2CB5C24D1E66942100C27D36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5C24C1E66942100C27D36 /* AppDelegate.swift */; };
 		2CB5C24F1E66942100C27D36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5C24E1E66942100C27D36 /* ViewController.swift */; };
 		2CB5C2521E66942100C27D36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5C2501E66942100C27D36 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C4CF2CB1E9C948C00F96E16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CB5C2491E66942100C27D36 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB5C24C1E66942100C27D36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB5C24E1E66942100C27D36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				2CB5C2531E66942100C27D36 /* Assets.xcassets */,
 				2CB5C2551E66942100C27D36 /* LaunchScreen.storyboard */,
 				2CB5C2581E66942100C27D36 /* Info.plist */,
+				2C4CF2CB1E9C948C00F96E16 /* GoogleService-Info.plist */,
 			);
 			path = Events;
 			sourceTree = "<group>";
@@ -152,6 +155,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CB5C2571E66942100C27D36 /* LaunchScreen.storyboard in Resources */,
+				2C4CF2CC1E9C948C00F96E16 /* GoogleService-Info.plist in Resources */,
 				2CB5C2541E66942100C27D36 /* Assets.xcassets in Resources */,
 				2CB5C2521E66942100C27D36 /* Main.storyboard in Resources */,
 			);
@@ -377,6 +381,7 @@
 				2CB5C25D1E66942100C27D36 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
