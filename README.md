@@ -8,3 +8,4 @@ An app to view and attend events near you.
 - [ ] When a user is near that location, the app notifies them of the event
 - [ ] Events can be searched and filtered for in a collection / list view 
 - [ ] Clicking on an event produces a more detailed view
+- [ ] Recommender Systems: Recommend Events to Users based on their attend history
