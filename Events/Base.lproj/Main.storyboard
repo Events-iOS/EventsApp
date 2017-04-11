@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,10 +50,10 @@
             </objects>
             <point key="canvasLocation" x="-311" y="409"/>
         </scene>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="MbS-QX-YMa">
             <objects>
-                <viewController id="xgE-DF-4gd" sceneMemberID="viewController">
+                <viewController id="xgE-DF-4gd" customClass="LoginViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="g04-2k-I1B"/>
                         <viewControllerLayoutGuide type="bottom" id="cnx-cS-cCJ"/>
@@ -94,12 +94,18 @@
                                 <rect key="frame" x="168" y="426" width="38" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="xgE-DF-4gd" eventType="touchUpInside" id="dGT-7m-rxx"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="PUN-i9-tV0"/>
                     <connections>
+                        <outlet property="onButtonPressed" destination="Nfo-jM-ceK" id="WFa-H6-nhi"/>
+                        <outlet property="passwordTextField" destination="QqW-ZA-OMV" id="SmW-Bn-3BL"/>
+                        <outlet property="userTextField" destination="bsA-bQ-W0G" id="bCz-AV-TyK"/>
                         <segue destination="8Mp-74-Hld" kind="presentation" id="J33-5c-n16"/>
                     </connections>
                 </viewController>
@@ -128,7 +134,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aCq-Kj-P72" id="AEP-b6-AK4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-4R-uLS">
@@ -407,6 +413,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UPy-V8-Ct7"/>
+        <segue reference="J33-5c-n16"/>
     </inferredMetricsTieBreakers>
 </document>
