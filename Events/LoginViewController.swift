@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class LoginViewController: UIViewController {
     // Fields where the user enters login details
@@ -28,6 +29,10 @@ class LoginViewController: UIViewController {
         let username = userTextField.text ?? nil
         let password = passwordTextField.text ?? nil
         
+        FIRAuth.auth()?.signIn(withEmail: username!, password: password!) { (user, error) in
+            print(user?.uid)
+        }
+
         
     }
     /*
