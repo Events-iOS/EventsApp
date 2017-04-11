@@ -12,6 +12,7 @@
 		2CB5C2521E66942100C27D36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5C2501E66942100C27D36 /* Main.storyboard */; };
 		2CB5C2541E66942100C27D36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5C2531E66942100C27D36 /* Assets.xcassets */; };
 		2CB5C2571E66942100C27D36 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5C2551E66942100C27D36 /* LaunchScreen.storyboard */; };
+		925388BF9F2A881AFDEEA25A /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EE616013DDD67BE9E54D26 /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		2CB5C2531E66942100C27D36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CB5C2561E66942100C27D36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CB5C2581E66942100C27D36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		58EE616013DDD67BE9E54D26 /* Pods_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		639F8C242F7A6782A32302F2 /* Pods-Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.debug.xcconfig"; sourceTree = "<group>"; };
+		75EF55AAF70BE0697CE25335 /* Pods-Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				925388BF9F2A881AFDEEA25A /* Pods_Events.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2BB812DA84214B3BB17E5F34 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				639F8C242F7A6782A32302F2 /* Pods-Events.debug.xcconfig */,
+				75EF55AAF70BE0697CE25335 /* Pods-Events.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2CB5C2401E66942100C27D36 = {
 			isa = PBXGroup;
 			children = (
 				2CB5C24B1E66942100C27D36 /* Events */,
 				2CB5C24A1E66942100C27D36 /* Products */,
+				2BB812DA84214B3BB17E5F34 /* Pods */,
+				E172BC407AE781BA761A9E65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = Events;
 			sourceTree = "<group>";
 		};
+		E172BC407AE781BA761A9E65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				58EE616013DDD67BE9E54D26 /* Pods_Events.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CB5C25B1E66942100C27D36 /* Build configuration list for PBXNativeTarget "Events" */;
 			buildPhases = (
+				40507D764A26E4BFAF2114E9 /* [CP] Check Pods Manifest.lock */,
 				2CB5C2451E66942100C27D36 /* Sources */,
 				2CB5C2461E66942100C27D36 /* Frameworks */,
 				2CB5C2471E66942100C27D36 /* Resources */,
+				BEE482638380B9E30F71EF24 /* [CP] Embed Pods Frameworks */,
+				6E435115E523EC33436CB0DA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -131,6 +158,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40507D764A26E4BFAF2114E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6E435115E523EC33436CB0DA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Events/Pods-Events-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BEE482638380B9E30F71EF24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Events/Pods-Events-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CB5C2451E66942100C27D36 /* Sources */ = {
@@ -257,6 +332,7 @@
 		};
 		2CB5C25C1E66942100C27D36 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 639F8C242F7A6782A32302F2 /* Pods-Events.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2SP49XQ42W;
@@ -270,6 +346,7 @@
 		};
 		2CB5C25D1E66942100C27D36 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75EF55AAF70BE0697CE25335 /* Pods-Events.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 2SP49XQ42W;
