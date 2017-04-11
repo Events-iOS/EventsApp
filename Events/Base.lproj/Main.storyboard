@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -128,7 +128,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aCq-Kj-P72" id="AEP-b6-AK4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-4R-uLS">
@@ -234,10 +234,10 @@
             </objects>
             <point key="canvasLocation" x="5216.8000000000002" y="408.84557721139436"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="aVG-rH-puf">
             <objects>
-                <viewController id="TNH-mc-MB6" sceneMemberID="viewController">
+                <viewController id="TNH-mc-MB6" customClass="SignUpViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cqq-FT-TqI"/>
                         <viewControllerLayoutGuide type="bottom" id="B3R-L8-pcp"/>
@@ -320,12 +320,20 @@
                                 <rect key="frame" x="142" y="493" width="55" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="onSignUpTapped:" destination="TNH-mc-MB6" eventType="touchUpInside" id="ZGr-I7-sCH"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="1l5-79-vvn"/>
                     <connections>
+                        <outlet property="confirmPass" destination="jFn-K9-aQo" id="vLC-XO-t2R"/>
+                        <outlet property="email" destination="73d-dK-Sxl" id="cbr-D5-H7N"/>
+                        <outlet property="firstName" destination="oIO-4k-Dep" id="0zJ-6o-smG"/>
+                        <outlet property="lastName" destination="6nV-El-Jav" id="oNb-WO-qkn"/>
+                        <outlet property="password" destination="ZTa-hc-bsK" id="bIs-lk-ohY"/>
                         <segue destination="8Mp-74-Hld" kind="presentation" id="UPy-V8-Ct7"/>
                     </connections>
                 </viewController>

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2C4CF2CC1E9C948C00F96E16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C4CF2CB1E9C948C00F96E16 /* GoogleService-Info.plist */; };
+		2C4CF2D01E9C964D00F96E16 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C4CF2CF1E9C964D00F96E16 /* SignUpViewController.swift */; };
 		2CB5C24D1E66942100C27D36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5C24C1E66942100C27D36 /* AppDelegate.swift */; };
 		2CB5C24F1E66942100C27D36 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CB5C24E1E66942100C27D36 /* ViewController.swift */; };
 		2CB5C2521E66942100C27D36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CB5C2501E66942100C27D36 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		2C4CF2CB1E9C948C00F96E16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2C4CF2CF1E9C964D00F96E16 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		2CB5C2491E66942100C27D36 /* Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Events.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB5C24C1E66942100C27D36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CB5C24E1E66942100C27D36 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 		2C4CF2CD1E9C960A00F96E16 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				2C4CF2CF1E9C964D00F96E16 /* SignUpViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -232,6 +235,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C4CF2D01E9C964D00F96E16 /* SignUpViewController.swift in Sources */,
 				2CB5C24F1E66942100C27D36 /* ViewController.swift in Sources */,
 				2CB5C24D1E66942100C27D36 /* AppDelegate.swift in Sources */,
 			);
