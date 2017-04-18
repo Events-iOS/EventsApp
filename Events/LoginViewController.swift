@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     // Fields where the user enters login details
+    @IBOutlet weak var errorMessage: UILabel!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userTextField: UITextField!
@@ -26,13 +27,29 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func validateForm() -> Bool {
+        if (userTextField.text == "" || passwordTextField.text == "" ) {
+            errorMessage.text = "Please enter a valid email and password"
+            return false
+        }
+        return true
+    }
+    
 
     @IBAction func onButtonPressed(_ sender: Any) {
         let username = userTextField.text ?? nil
         let password = passwordTextField.text ?? nil
         
+        if (validateForm()) {
         FIRAuth.auth()?.signIn(withEmail: username!, password: password!) { (user, error) in
-            print("Logged in with User ID: " + (user?.uid)!)
+            if let user = user {
+                self.performSegue(withIdentifier: "loginSegue", sender: nil)
+                print("Logged in with User ID: " + (user.uid))
+            }
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
         }
 
         
