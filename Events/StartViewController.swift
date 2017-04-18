@@ -22,6 +22,13 @@ class StartViewController: UIViewController {
     }
     
 
+    @IBAction func onLogin(_ sender: Any) {
+        
+    }
+    
+    @IBAction func onSignUp(_ sender: Any) {
+    }
+    
     /*
     // MARK: - Navigation
 
