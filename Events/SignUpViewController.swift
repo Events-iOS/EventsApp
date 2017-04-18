@@ -16,6 +16,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var confirmPass: UITextField!
     
+    @IBOutlet weak var errorMessage: UILabel!
     let auth: FIRAuth = FIRAuth.auth()!
     
     override func viewDidLoad() {
@@ -28,6 +29,32 @@ class SignUpViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func validateForm() -> Bool {
+        // Check if names were entered
+        if (firstName.text! == "" || lastName.text! == "") {
+            errorMessage.text = "Please enter a valid name"
+            return false
+        }
+        // Check if email was entered
+        if (email.text == "") {
+            errorMessage.text = "Please enter a valid email"
+            return false;
+        }
+        // Check if password fields were entered
+        if (password.text == "" ){
+            errorMessage.text = "Please enter a valid password"
+            return false
+        }
+        // Check if passwords match
+        if (password.text != confirmPass.text) {
+            errorMessage.text = "Passwords do not match"
+            return false
+        }
+        
+        return true
+    }
+    
     @IBAction func onSignUpTapped(_ sender: Any) {
         let firstNameText = firstName.text!
         let lastNameText = lastName.text!
@@ -35,8 +62,19 @@ class SignUpViewController: UIViewController {
         let passwordText = password.text!
         let confirmPassText = confirmPass.text!
         
+        if (validateForm()) {
+        
         auth.createUser(withEmail: emailText, password: passwordText) { (user: FIRUser?, error: Error?) in
-            print("created user with uid: " + (user?.uid)!)
+            if let error = error{
+                print(error.localizedDescription)
+            }
+            else {
+                if let user = user {
+                    print("created user with uid: " + (user.uid))
+                    self.performSegue(withIdentifier: "signupSegue", sender: nil)
+                }
+            }
+        }
         }
     }
 
