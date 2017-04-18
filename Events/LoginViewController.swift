@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
         let password = passwordTextField.text ?? nil
         
         FIRAuth.auth()?.signIn(withEmail: username!, password: password!) { (user, error) in
-            print(user?.uid)
+            print("Logged in with User ID: " + (user?.uid)!)
         }
 
         
