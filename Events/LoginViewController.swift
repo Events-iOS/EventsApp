@@ -11,12 +11,14 @@ import FirebaseAuth
 
 class LoginViewController: UIViewController {
     // Fields where the user enters login details
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var userTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        loginButton.layer.cornerRadius = 5
     }
 
     override func didReceiveMemoryWarning() {
