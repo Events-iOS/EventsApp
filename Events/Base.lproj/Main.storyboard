@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cCj-Mk-IOL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cCj-Mk-IOL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -120,7 +120,7 @@
                         <outlet property="loginButton" destination="Nfo-jM-ceK" id="frX-Ur-Dxw"/>
                         <outlet property="passwordTextField" destination="QqW-ZA-OMV" id="SmW-Bn-3BL"/>
                         <outlet property="userTextField" destination="bsA-bQ-W0G" id="bCz-AV-TyK"/>
-                        <segue destination="8Mp-74-Hld" kind="presentation" id="J33-5c-n16"/>
+                        <segue destination="8Mp-74-Hld" kind="presentation" identifier="loginSegue" id="J33-5c-n16"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qdC-jD-LDQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -148,7 +148,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aCq-Kj-P72" id="AEP-b6-AK4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-4R-uLS">
@@ -292,7 +292,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jFn-K9-aQo">
                                 <rect key="frame" x="196" y="415" width="97" height="30"/>
@@ -344,6 +344,13 @@
                                     <action selector="onSignUpTapped:" destination="TNH-mc-MB6" eventType="touchUpInside" id="ZGr-I7-sCH"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MdJ-qv-Qs3">
+                                <rect key="frame" x="48" y="626" width="311" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -351,10 +358,11 @@
                     <connections>
                         <outlet property="confirmPass" destination="jFn-K9-aQo" id="vLC-XO-t2R"/>
                         <outlet property="email" destination="73d-dK-Sxl" id="cbr-D5-H7N"/>
+                        <outlet property="errorMessage" destination="MdJ-qv-Qs3" id="naa-c7-Tfh"/>
                         <outlet property="firstName" destination="oIO-4k-Dep" id="0zJ-6o-smG"/>
                         <outlet property="lastName" destination="6nV-El-Jav" id="oNb-WO-qkn"/>
                         <outlet property="password" destination="ZTa-hc-bsK" id="bIs-lk-ohY"/>
-                        <segue destination="8Mp-74-Hld" kind="presentation" id="UPy-V8-Ct7"/>
+                        <segue destination="8Mp-74-Hld" kind="presentation" identifier="signupSegue" id="UPy-V8-Ct7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNa-9J-4PO" userLabel="First Responder" sceneMemberID="firstResponder"/>
