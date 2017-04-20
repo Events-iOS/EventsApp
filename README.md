@@ -3,6 +3,7 @@
 An app to view and attend events near you. 
 
 ## User Stories 
+- [X] Users will have the ability to sign in and login 
 - [ ] User can view events near them 
 - [ ] Organizers can "drop a pin" of where an event is taking place 
 - [ ] When a user is near that location, the app notifies them of the event
