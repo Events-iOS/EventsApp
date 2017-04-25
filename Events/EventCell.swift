@@ -10,6 +10,11 @@ import UIKit
 
 class EventCell: UITableViewCell {
 
+    @IBOutlet weak var eventDescriptionLabel: UILabel!
+    @IBOutlet weak var eventImageView: UIImageView!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +22,15 @@ class EventCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
-
+    
+    var event: Event! {
+        didSet {
+            eventDescriptionLabel.text = event.eventDescription
+            //eventImageView.setImageWith(event.)
+            locationLabel.text = event.location
+            dateLabel.text = String(describing: event.startDate)
+        }
+    }
 }

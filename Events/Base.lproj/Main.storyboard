@@ -221,6 +221,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="dateLabel" destination="i5m-3i-TVr" id="tly-DS-hFI"/>
+                                            <outlet property="eventDescriptionLabel" destination="49b-PJ-tLZ" id="St9-sG-Eqv"/>
+                                            <outlet property="eventImageView" destination="yVV-4R-uLS" id="RmP-u5-5Lc"/>
+                                            <outlet property="locationLabel" destination="Sh2-HB-CRX" id="Pt0-9N-fcB"/>
                                             <segue destination="QkY-az-cP5" kind="presentation" id="G5G-V5-ekd"/>
                                         </connections>
                                     </tableViewCell>
