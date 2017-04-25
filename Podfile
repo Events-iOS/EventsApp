@@ -6,4 +6,5 @@ target 'Events' do
   use_frameworks!
   # Pods for Events
 	pod ‘Firebase/Auth’
+    pod 'Firebase/Database'
 end
