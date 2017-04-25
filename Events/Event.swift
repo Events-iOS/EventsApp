@@ -20,16 +20,19 @@ class Event: NSObject {
     var category: String?
     var max_capacity: Int?
     
-    var attendees: [String]
-    var numRSVP: Int
+    var attendees: [String]?
+    var numRSVP: Int?
 //    var photos: [UIImage]
     
     var event: NSDictionary?
     
     init(dictionary: NSDictionary) {
+        event = dictionary
         category = dictionary["category"] as? String
-        attendees = (dictionary["attendees"] as? [String])!
-        numRSVP = attendees.count
+        if let attendeesText = dictionary["attendees"] as? [String] {
+            attendees = attendeesText
+            numRSVP = attendees?.count
+        }
         eventDescription = dictionary["description"] as? String
         startDate = dictionary["start"] as? NSDate
         endDate = dictionary["endDate"] as? NSDate
@@ -38,5 +41,9 @@ class Event: NSObject {
         max_capacity = dictionary["maxCapacity"] as? Int
         startDate = dictionary["startDate"] as? NSDate
         title = dictionary["title"] as? String
+    }
+    
+    var dict: [String:AnyObject] {
+        return event as! [String : AnyObject]
     }
 }

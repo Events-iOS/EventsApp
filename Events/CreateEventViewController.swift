@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
 class CreateEventViewController: UIViewController {
+    @IBOutlet weak var eventName: UITextField!
+    @IBOutlet weak var eventLocation: UITextField!
 
+    @IBOutlet weak var eventCategory: UITextField!
+    
+    @IBOutlet weak var eventDescription: UITextField!
+    
+    var ref: FIRDatabaseReference?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        ref = FIRDatabase.database().reference()
         // Do any additional setup after loading the view.
     }
 
@@ -21,6 +31,17 @@ class CreateEventViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func onEventSaved(_ sender: Any) {
+        var eventDictionary : NSDictionary = ["title" : eventName.text, "category" : eventCategory.text, "location": eventCategory.text, "description" : eventDescription]
+        
+        var event: Event = Event(dictionary: eventDictionary)
+        self.ref?.child("events").setValue(event.dict)
+        
+        
+        
+        
+        
+    }
 
     /*
     // MARK: - Navigation
