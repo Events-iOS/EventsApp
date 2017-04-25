@@ -33,15 +33,36 @@ class Event: NSObject {
             attendees = attendeesText
             numRSVP = attendees?.count
         }
-        eventDescription = dictionary["description"] as? String
-        startDate = dictionary["start"] as? NSDate
-        endDate = dictionary["endDate"] as? NSDate
-        id = dictionary["eventid"] as? String
-        location = dictionary["location"] as? String
-        max_capacity = dictionary["maxCapacity"] as? Int
-        startDate = dictionary["startDate"] as? NSDate
-        title = dictionary["title"] as? String
+        if let eventDescriptionText = dictionary["description"] as? String {
+            eventDescription = eventDescriptionText
+        }
+        if let startDateText = dictionary["start"] as? NSDate {
+            startDate = startDateText
+        }
+        if let endDateText = dictionary["endDate"] as? NSDate {
+            endDate = endDateText
+        }
+        if let idText = dictionary["eventid"] as? String {
+            id = idText
+        }
+        if let locationText = dictionary["location"] as? String {
+            location = locationText
+        }
+        if let max_capacityText = dictionary["maxCapacity"] as? Int {
+            max_capacity = max_capacityText
+        }
+        if let startDateText = dictionary["startDate"] as? NSDate {
+            startDate = startDateText
+        }
+        if let titleText = dictionary["title"] as? String {
+            title = titleText
+        }
     }
+    
+    func setEventId(eventId: String) {
+        id = eventId
+    }
+    
     
     var dict: [String:AnyObject] {
         return event as! [String : AnyObject]
