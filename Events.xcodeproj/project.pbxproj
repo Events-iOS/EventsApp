@@ -18,6 +18,7 @@
 		547B9DC61EA5CEED00D5D3B3 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B9DC51EA5CEED00D5D3B3 /* EventCell.swift */; };
 		547B9DC81EA5D0CD00D5D3B3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547B9DC71EA5D0CD00D5D3B3 /* Event.swift */; };
 		548BB21D1E9C965200ADADFA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 548BB21C1E9C965200ADADFA /* LoginViewController.swift */; };
+		549A8BB41EAEFEDE0091B402 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 549A8BB31EAEFEDE0091B402 /* User.swift */; };
 		925388BF9F2A881AFDEEA25A /* Pods_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58EE616013DDD67BE9E54D26 /* Pods_Events.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		547B9DC51EA5CEED00D5D3B3 /* EventCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		547B9DC71EA5D0CD00D5D3B3 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		548BB21C1E9C965200ADADFA /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		549A8BB31EAEFEDE0091B402 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		58EE616013DDD67BE9E54D26 /* Pods_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		639F8C242F7A6782A32302F2 /* Pods-Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.debug.xcconfig"; sourceTree = "<group>"; };
 		75EF55AAF70BE0697CE25335 /* Pods-Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-Events/Pods-Events.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				547B9DC71EA5D0CD00D5D3B3 /* Event.swift */,
+				549A8BB31EAEFEDE0091B402 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				547B9DC21EA5C04600D5D3B3 /* StartViewController.swift in Sources */,
 				2C4CF2D01E9C964D00F96E16 /* SignUpViewController.swift in Sources */,
 				547B9DC61EA5CEED00D5D3B3 /* EventCell.swift in Sources */,
+				549A8BB41EAEFEDE0091B402 /* User.swift in Sources */,
 				2CB5C24D1E66942100C27D36 /* AppDelegate.swift in Sources */,
 				547B9DC81EA5D0CD00D5D3B3 /* Event.swift in Sources */,
 				547B9DC41EA5CDE500D5D3B3 /* EventsViewController.swift in Sources */,
