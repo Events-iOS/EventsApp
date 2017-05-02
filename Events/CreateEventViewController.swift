@@ -34,7 +34,7 @@ class CreateEventViewController: UIViewController {
     @IBAction func onEventSaved(_ sender: Any) {
         var eventDictionary : NSDictionary = ["title" : eventName.text, "category" : eventCategory.text, "location": eventLocation.text, "description" : eventDescription.text]
         
-        var event: Event = Event(dictionary: eventDictionary)
+        var event: Event = Event(dictionary: eventDictionary as! [String : AnyObject])
         var eventRef = self.ref?.child("events").childByAutoId()
         event.setEventId(eventId: (eventRef?.key)!)
         eventRef?.setValue(event.dict)
