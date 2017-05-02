@@ -284,7 +284,7 @@
             </objects>
             <point key="canvasLocation" x="4412" y="408.84557721139436"/>
         </scene>
-        <!--Create Event View Controller-->
+        <!--Title-->
         <scene sceneID="qrl-5g-iX4">
             <objects>
                 <viewController id="cE7-Ay-t6u" customClass="CreateEventViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
@@ -324,10 +324,11 @@
                                 <rect key="frame" x="10" y="294" width="355" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mgu-yb-OwC">
                                 <rect key="frame" x="10" y="344" width="355" height="257"/>
+                                <color key="backgroundColor" red="0.47477518966049104" green="1" blue="0.51018083540878778" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3B-cJ-U0E">
                                 <rect key="frame" x="165" y="611" width="44" height="36"/>
@@ -366,11 +367,16 @@
                             <constraint firstItem="8mf-sA-VnH" firstAttribute="trailing" secondItem="cjD-9F-kol" secondAttribute="trailing" id="yb0-P5-mp8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="cJB-KB-Oz2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="bsX-vm-kDq"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="eventCategory" destination="i0i-ZE-nGv" id="qIp-8b-d3Y"/>
                         <outlet property="eventDescription" destination="01h-tn-qRz" id="uZQ-e1-w6w"/>
+                        <outlet property="eventImage" destination="Mgu-yb-OwC" id="3we-Ck-Evf"/>
                         <outlet property="eventLocation" destination="8mf-sA-VnH" id="lsa-FU-LnD"/>
                         <outlet property="eventName" destination="cjD-9F-kol" id="L3T-cf-zgV"/>
+                        <outlet property="maxCapacity" destination="TQB-8B-tVv" id="8FF-Tq-ad5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LnD-1N-q9P" userLabel="First Responder" sceneMemberID="firstResponder"/>
