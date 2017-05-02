@@ -321,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="4412" y="1217"/>
         </scene>
-        <!--View Controller-->
+        <!--Event Detailed View Controller-->
         <scene sceneID="8sR-kb-9Uq">
             <objects>
-                <viewController id="6rM-If-hjD" sceneMemberID="viewController">
+                <viewController id="6rM-If-hjD" customClass="EventDetailedViewController" customModule="Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Yu0-Vg-xOc"/>
                         <viewControllerLayoutGuide type="bottom" id="T6m-aa-YWz"/>
@@ -333,33 +333,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GlJ-8O-ZYh">
-                                <rect key="frame" x="0.0" y="283" width="375" height="384"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="GlJ-8O-ZYh">
+                                <rect key="frame" x="0.0" y="59.5" width="375" height="384"/>
                             </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itc-L7-hEv">
-                                <rect key="frame" x="16" y="72" width="113" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itc-L7-hEv">
+                                <rect key="frame" x="16" y="469.5" width="113" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0p-gD-jUH">
-                                <rect key="frame" x="16" y="107" width="66" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date / Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-vk-aHr">
+                                <rect key="frame" x="16" y="513" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date / Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-vk-aHr">
-                                <rect key="frame" x="16" y="136" width="89" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0p-gD-jUH">
+                                <rect key="frame" x="16" y="562" width="66" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZTh-vk-aHr" secondAttribute="trailing" constant="254" id="149-PW-5xJ"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="w0p-gD-jUH" secondAttribute="leading" id="3EI-wl-KO7"/>
+                            <constraint firstItem="w0p-gD-jUH" firstAttribute="top" secondItem="ZTh-vk-aHr" secondAttribute="bottom" constant="28" id="662-Fd-One"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="itc-L7-hEv" secondAttribute="leading" id="DTw-MA-Ty1"/>
+                            <constraint firstItem="ZTh-vk-aHr" firstAttribute="top" secondItem="itc-L7-hEv" secondAttribute="bottom" constant="23" id="Dhq-RQ-kXc"/>
+                            <constraint firstAttribute="trailing" secondItem="GlJ-8O-ZYh" secondAttribute="trailing" id="EvA-R3-3Od"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="w0p-gD-jUH" secondAttribute="trailing" constant="277" id="HRi-Kr-3EC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="itc-L7-hEv" secondAttribute="trailing" constant="230" id="NUr-TK-0xP"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="ZTh-vk-aHr" secondAttribute="leading" id="Ul4-kH-WI9"/>
+                            <constraint firstItem="itc-L7-hEv" firstAttribute="top" secondItem="GlJ-8O-ZYh" secondAttribute="bottom" constant="26" id="VSb-fp-gAb"/>
+                            <constraint firstItem="GlJ-8O-ZYh" firstAttribute="top" secondItem="Yu0-Vg-xOc" secondAttribute="bottom" constant="-4.5" id="W8T-rR-1B4"/>
+                            <constraint firstItem="T6m-aa-YWz" firstAttribute="top" secondItem="GlJ-8O-ZYh" secondAttribute="bottom" constant="223.5" id="d9T-ql-H47"/>
+                            <constraint firstItem="T6m-aa-YWz" firstAttribute="top" secondItem="w0p-gD-jUH" secondAttribute="bottom" constant="84" id="wdW-VT-siK"/>
+                            <constraint firstItem="GlJ-8O-ZYh" firstAttribute="leading" secondItem="zbs-Hx-nqj" secondAttribute="leading" id="zpn-0c-5pX"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dmp-ag-xar"/>
                 </viewController>
