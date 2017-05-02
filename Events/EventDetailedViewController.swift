@@ -10,6 +10,10 @@ import UIKit
 
 class EventDetailedViewController: UIViewController {
 
+    @IBOutlet weak var eventLocation: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
+    @IBOutlet weak var eventDescription: UILabel!
+    var event: Event!
     override func viewDidLoad() {
         super.viewDidLoad()
 

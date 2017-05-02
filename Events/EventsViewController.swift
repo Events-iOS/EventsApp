@@ -69,11 +69,14 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let cell = sender as! EventCell
-        let indexPath = tableView.indexPath(for: cell)
-        let event = events![(indexPath!.row)]
-        
-        let detailedViewController = segue.destination as! EventDetailedViewController
-        detailedViewController.event = event
-    }
+            if segue.identifier == "detailsSegue" {
+                let cell = sender as! EventCell
+                let indexPath = tableView.indexPath(for: cell)
+                let event = events![(indexPath!.row)]
+            
+                let detailedViewController = segue.destination as! EventDetailedViewController
+                detailedViewController.event = event
+            }
+        }
+       
 }

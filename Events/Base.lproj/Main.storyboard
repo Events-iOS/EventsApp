@@ -256,12 +256,13 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="49b-PJ-tLZ" secondAttribute="trailing" constant="112" id="vro-yA-2re"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="dateLabel" destination="i5m-3i-TVr" id="tly-DS-hFI"/>
                                             <outlet property="eventDescriptionLabel" destination="49b-PJ-tLZ" id="St9-sG-Eqv"/>
                                             <outlet property="eventImageView" destination="yVV-4R-uLS" id="RmP-u5-5Lc"/>
                                             <outlet property="locationLabel" destination="Sh2-HB-CRX" id="Pt0-9N-fcB"/>
-                                            <segue destination="QkY-az-cP5" kind="presentation" identifier="detailsSegue" id="G5G-V5-ekd"/>
+                                            <segue destination="6rM-If-hjD" kind="show" identifier="detailsSegue" id="sO4-19-Trj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -422,10 +423,15 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dmp-ag-xar"/>
+                    <connections>
+                        <outlet property="eventDate" destination="ZTh-vk-aHr" id="BHX-92-0Jb"/>
+                        <outlet property="eventDescription" destination="itc-L7-hEv" id="sS1-bg-XS9"/>
+                        <outlet property="eventLocation" destination="w0p-gD-jUH" id="1Uj-QW-FSg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOq-Td-YoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6156" y="408.84557721139436"/>
+            <point key="canvasLocation" x="5377" y="409"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="aVG-rH-puf">
@@ -559,24 +565,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPn-Ve-hxP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3536.8000000000002" y="408.84557721139436"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="jpR-Af-BWJ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QkY-az-cP5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UOn-Ih-6Fx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6rM-If-hjD" kind="relationship" relationship="rootViewController" id="KAl-rc-Mby"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="TfW-1t-HWg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5288.8000000000002" y="408.84557721139436"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Xhq-ol-GJm">
