@@ -174,7 +174,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="134" id="aCq-Kj-P72" customClass="EventCell" customModule="Events" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="eventCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="134" id="aCq-Kj-P72" customClass="EventCell" customModule="Events" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aCq-Kj-P72" id="AEP-b6-AK4">
@@ -502,7 +502,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Mp-74-Hld" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPd-h9-TPY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vPd-h9-TPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -520,7 +520,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QkY-az-cP5" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="UOn-Ih-6Fx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="UOn-Ih-6Fx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -538,7 +538,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCj-Mk-IOL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XcT-Se-oAq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XcT-Se-oAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

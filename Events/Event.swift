@@ -26,8 +26,8 @@ class Event: NSObject {
     
     var event: NSDictionary?
     
-    init(dictionary: NSDictionary) {
-        event = dictionary
+    init(dictionary: [String: AnyObject]) {
+        event = dictionary as NSDictionary
         category = dictionary["category"] as? String
         if let attendeesText = dictionary["attendees"] as? [String] {
             attendees = attendeesText
@@ -56,6 +56,9 @@ class Event: NSObject {
         }
         if let titleText = dictionary["title"] as? String {
             title = titleText
+        }
+        else {
+            title = "Untitled"
         }
     }
     
