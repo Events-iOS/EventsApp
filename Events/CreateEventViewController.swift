@@ -17,6 +17,9 @@ class CreateEventViewController: UIViewController {
     
     @IBOutlet weak var eventDescription: UITextField!
     
+    @IBOutlet weak var maxCapacity: UITextField!
+    @IBOutlet weak var eventImage: UIImageView!
+    
     var ref: FIRDatabaseReference?
     
     
@@ -32,10 +35,12 @@ class CreateEventViewController: UIViewController {
     }
     
     @IBAction func onEventSaved(_ sender: Any) {
-        var eventDictionary : NSDictionary = ["title" : eventName.text, "category" : eventCategory.text, "location": eventLocation.text, "description" : eventDescription.text]
+        let eventDictionary : NSDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized", "location": eventLocation.text ?? "TBD", "description" : eventDescription.text ?? "No description",
+            "max_capacity" : maxCapacity.text ?? "100"
+        ]
         
-        var event: Event = Event(dictionary: eventDictionary as! [String : AnyObject])
-        var eventRef = self.ref?.child("events").childByAutoId()
+        let event: Event = Event(dictionary: eventDictionary as! [String : AnyObject])
+        let eventRef = self.ref?.child("events").childByAutoId()
         event.setEventId(eventId: (eventRef?.key)!)
         eventRef?.setValue(event.dict)
     }
