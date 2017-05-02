@@ -175,7 +175,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="134"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aCq-Kj-P72" id="AEP-b6-AK4">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="134"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="133.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stock" translatesAutoresizingMaskIntoConstraints="NO" id="yVV-4R-uLS">
@@ -261,7 +261,7 @@
                                             <outlet property="eventDescriptionLabel" destination="49b-PJ-tLZ" id="St9-sG-Eqv"/>
                                             <outlet property="eventImageView" destination="yVV-4R-uLS" id="RmP-u5-5Lc"/>
                                             <outlet property="locationLabel" destination="Sh2-HB-CRX" id="Pt0-9N-fcB"/>
-                                            <segue destination="QkY-az-cP5" kind="presentation" id="G5G-V5-ekd"/>
+                                            <segue destination="QkY-az-cP5" kind="presentation" identifier="detailsSegue" id="G5G-V5-ekd"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

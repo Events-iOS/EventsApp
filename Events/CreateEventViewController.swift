@@ -38,13 +38,9 @@ class CreateEventViewController: UIViewController {
         var eventRef = self.ref?.child("events").childByAutoId()
         event.setEventId(eventId: (eventRef?.key)!)
         eventRef?.setValue(event.dict)
-        
-        
-        
-        
-        
     }
-
+    
+    
     /*
     // MARK: - Navigation
 
