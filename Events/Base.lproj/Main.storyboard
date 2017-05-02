@@ -120,22 +120,25 @@
                                     <action selector="onButtonPressed:" destination="xgE-DF-4gd" eventType="touchUpInside" id="dGT-7m-rxx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-Je-bNT">
-                                <rect key="frame" x="16" y="433" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-Je-bNT">
+                                <rect key="frame" x="16" y="433" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="AR0-Je-bNT" firstAttribute="top" secondItem="Nfo-jM-ceK" secondAttribute="bottom" constant="42" id="4aB-hs-Z7A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QqW-ZA-OMV" secondAttribute="trailing" id="6dg-Oi-NaN"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="AR0-Je-bNT" secondAttribute="leading" id="E06-HP-fM6"/>
                             <constraint firstItem="bsA-bQ-W0G" firstAttribute="top" secondItem="g04-2k-I1B" secondAttribute="bottom" constant="75" id="Gce-qo-U4T"/>
                             <constraint firstAttribute="leadingMargin" secondItem="QqW-ZA-OMV" secondAttribute="leading" id="HYg-we-DXW"/>
                             <constraint firstItem="cnx-cS-cCJ" firstAttribute="top" secondItem="Nfo-jM-ceK" secondAttribute="bottom" constant="276" id="IZ8-Dj-2ch"/>
                             <constraint firstItem="Nfo-jM-ceK" firstAttribute="top" secondItem="QqW-ZA-OMV" secondAttribute="bottom" constant="48" id="N7u-uq-Smw"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AR0-Je-bNT" secondAttribute="trailing" constant="301" id="Wp8-8u-d4S"/>
                             <constraint firstItem="QqW-ZA-OMV" firstAttribute="top" secondItem="bsA-bQ-W0G" secondAttribute="bottom" constant="58" id="lfK-FH-JZW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nfo-jM-ceK" secondAttribute="trailing" constant="92" id="nll-Jz-Caj"/>
                             <constraint firstItem="Nfo-jM-ceK" firstAttribute="leading" secondItem="std-wQ-5Fo" secondAttribute="leadingMargin" constant="92" id="qRR-Jf-xu5"/>
                             <constraint firstAttribute="leadingMargin" secondItem="bsA-bQ-W0G" secondAttribute="leading" id="v1U-Hj-JDs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bsA-bQ-W0G" secondAttribute="trailing" id="yNm-aZ-DBE"/>
@@ -550,6 +553,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="UPy-V8-Ct7"/>
+        <segue reference="J33-5c-n16"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.99123483896255493" green="0.99629455804824829" blue="0.99603646993637085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>
