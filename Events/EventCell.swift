@@ -27,7 +27,8 @@ class EventCell: UITableViewCell {
     
     var event: Event! {
         didSet {
-            eventDescriptionLabel.text = event.eventDescription
+            eventDescriptionLabel.text = event.title
+            
             //eventImageView.setImageWith(event.)
             locationLabel.text = event.location
             dateLabel.text = String(describing: event.startDate)

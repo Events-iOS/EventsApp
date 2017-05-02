@@ -34,9 +34,10 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     func fetchEvents() {
         let eventRef = ref.child("events")
         eventRef.observe(.value, with: { (snapshot) in
-            print(snapshot)
+            //print(snapshot)
             for snap in snapshot.children {
                 let event = snap as! FIRDataSnapshot
+                print(event)
                 let eventObj = Event(dictionary: event.value as! [String: AnyObject])
                 self.events?.append(eventObj)
                 self.tableView.reloadData()
@@ -51,6 +52,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         if let events = events {
             return events.count
         } else {
+            events = []
             return 0
         }
     }
@@ -58,7 +60,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCell
         let event = events?[indexPath.row]
-        cell.event.title = event?.title ?? "Untitled"
+        cell.event = event
         return cell
     }
 
