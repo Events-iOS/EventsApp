@@ -120,8 +120,9 @@
                                     <action selector="onButtonPressed:" destination="xgE-DF-4gd" eventType="touchUpInside" id="dGT-7m-rxx"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-Je-bNT">
-                                <rect key="frame" x="16" y="433" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AR0-Je-bNT">
+                                <rect key="frame" x="16" y="433" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -129,16 +130,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="AR0-Je-bNT" firstAttribute="top" secondItem="Nfo-jM-ceK" secondAttribute="bottom" constant="42" id="4aB-hs-Z7A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QqW-ZA-OMV" secondAttribute="trailing" id="6dg-Oi-NaN"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="AR0-Je-bNT" secondAttribute="leading" id="E06-HP-fM6"/>
                             <constraint firstItem="bsA-bQ-W0G" firstAttribute="top" secondItem="g04-2k-I1B" secondAttribute="bottom" constant="75" id="Gce-qo-U4T"/>
                             <constraint firstAttribute="leadingMargin" secondItem="QqW-ZA-OMV" secondAttribute="leading" id="HYg-we-DXW"/>
-                            <constraint firstItem="cnx-cS-cCJ" firstAttribute="top" secondItem="Nfo-jM-ceK" secondAttribute="bottom" constant="276" id="IZ8-Dj-2ch"/>
+                            <constraint firstItem="cnx-cS-cCJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Nfo-jM-ceK" secondAttribute="bottom" constant="30" id="IZ8-Dj-2ch"/>
                             <constraint firstItem="Nfo-jM-ceK" firstAttribute="top" secondItem="QqW-ZA-OMV" secondAttribute="bottom" constant="48" id="N7u-uq-Smw"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="AR0-Je-bNT" secondAttribute="trailing" constant="301" id="Wp8-8u-d4S"/>
                             <constraint firstItem="QqW-ZA-OMV" firstAttribute="top" secondItem="bsA-bQ-W0G" secondAttribute="bottom" constant="58" id="lfK-FH-JZW"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nfo-jM-ceK" secondAttribute="trailing" constant="92" id="nll-Jz-Caj"/>
                             <constraint firstItem="Nfo-jM-ceK" firstAttribute="leading" secondItem="std-wQ-5Fo" secondAttribute="leadingMargin" constant="92" id="qRR-Jf-xu5"/>
                             <constraint firstAttribute="leadingMargin" secondItem="bsA-bQ-W0G" secondAttribute="leading" id="v1U-Hj-JDs"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bsA-bQ-W0G" secondAttribute="trailing" id="yNm-aZ-DBE"/>
@@ -196,19 +193,19 @@
                                                     <rect key="frame" x="293" y="95" width="70" height="30"/>
                                                     <state key="normal" title="Not Going"/>
                                                 </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Name of Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49b-PJ-tLZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name of Event" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="49b-PJ-tLZ">
                                                     <rect key="frame" x="142" y="8" width="113" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh2-HB-CRX">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sh2-HB-CRX">
                                                     <rect key="frame" x="142" y="37" width="66" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Date / Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5m-3i-TVr">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date / Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5m-3i-TVr">
                                                     <rect key="frame" x="142" y="66" width="89" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -221,6 +218,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="dDi-rL-UQL" firstAttribute="leading" secondItem="awh-6L-PZu" secondAttribute="trailing" constant="32" id="4k4-fj-G0J"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="i5m-3i-TVr" secondAttribute="trailing" constant="136" id="8Yq-fy-Ate"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="dDi-rL-UQL" secondAttribute="bottom" constant="0.5" id="BgR-9u-USj"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="awh-6L-PZu" secondAttribute="bottom" constant="0.5" id="BsC-e4-Rkc"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="fJm-YL-foF" secondAttribute="bottom" constant="0.5" id="GTm-6g-KUN"/>
@@ -232,6 +230,8 @@
                                                 <constraint firstItem="i5m-3i-TVr" firstAttribute="top" secondItem="Sh2-HB-CRX" secondAttribute="bottom" constant="8" id="eoi-2y-hwS"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="yVV-4R-uLS" secondAttribute="leading" id="l8m-hD-P8j"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="dDi-rL-UQL" secondAttribute="trailing" constant="4" id="oes-1f-qSK"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Sh2-HB-CRX" secondAttribute="trailing" constant="159" id="qXM-qe-vub"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="49b-PJ-tLZ" secondAttribute="trailing" constant="112" id="vro-yA-2re"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -260,7 +260,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYG-qZ-E6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4412" y="409"/>
+            <point key="canvasLocation" x="4412" y="408.84557721139436"/>
         </scene>
         <!--Create Event View Controller-->
         <scene sceneID="qrl-5g-iX4">
@@ -555,5 +555,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="J33-5c-n16"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="0.99123483896255493" green="0.99629455804824829" blue="0.99603646993637085" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
