@@ -16,7 +16,8 @@ class Event: NSObject {
     var eventDescription: String?
     
     var organizer: String?
-    var location: String?
+    var location: (Double, Double)?
+    var locationDescription: String?
     var category: String?
     var max_capacity: Int?
     
@@ -45,8 +46,8 @@ class Event: NSObject {
         if let idText = dictionary["eventid"] as? String {
             id = idText
         }
-        if let locationText = dictionary["location"] as? String {
-            location = locationText
+        if let location = dictionary["location"] as? (Double, Double) {
+            self.location = location
         }
         if let max_capacityText = dictionary["maxCapacity"] as? Int {
             max_capacity = max_capacityText

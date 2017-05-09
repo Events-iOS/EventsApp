@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Events
 //
-//  Created by Sandeep Raghunandhan on 2/28/17.
+//  Created by Sandeep Raghunandhan, Rajit Dang on 2/28/17.
 //  Copyright © 2017 Events-iOS. All rights reserved.
 //
 
