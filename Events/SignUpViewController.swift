@@ -60,18 +60,28 @@ class SignUpViewController: UIViewController {
         let lastNameText = lastName.text!
         let emailText = email.text!
         let passwordText = password.text!
-        let confirmPassText = confirmPass.text!
         
         if (validateForm()) {
         
         auth.createUser(withEmail: emailText, password: passwordText) { (user: FIRUser?, error: Error?) in
             if let error = error{
-                print(error.localizedDescription)
+                self.errorMessage.text = error.localizedDescription
             }
             else {
                 if let user = user {
-                    print("created user with uid: " + (user.uid))
-                    self.performSegue(withIdentifier: "signupSegue", sender: nil)
+                    let newUser = User(dictionary: ["first_name" : firstNameText,
+                                                    "last_name" : lastNameText,
+                                                    "email" : emailText,
+                                                    "uid" : user.uid])
+                    User.addUser(newUser: newUser, callback: { (result: String) in
+                        if result == "success" {
+                            self.performSegue(withIdentifier: "signupSegue", sender: nil)
+                        }
+                        else {
+                            self.errorMessage.text = result
+                        }
+                    })
+                    
                 }
             }
         }
