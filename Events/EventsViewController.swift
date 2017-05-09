@@ -60,6 +60,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCell
         let event = events?[indexPath.row]
         cell.event = event
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
 
