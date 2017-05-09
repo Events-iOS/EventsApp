@@ -47,6 +47,7 @@ class LoginViewController: UIViewController {
                 print("Logged in with User ID: " + (user.uid))
             }
             if let error = error {
+                self.errorMessage.text = error.localizedDescription
                 print(error.localizedDescription)
             }
         }

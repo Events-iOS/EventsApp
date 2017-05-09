@@ -37,7 +37,6 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
             //print(snapshot)
             for snap in snapshot.children {
                 let event = snap as! FIRDataSnapshot
-                print(event)
                 let eventObj = Event(dictionary: event.value as! [String: AnyObject])
                 self.events?.append(eventObj)
                 self.tableView.reloadData()
@@ -61,6 +60,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as! EventCell
         let event = events?[indexPath.row]
         cell.event = event
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
 
