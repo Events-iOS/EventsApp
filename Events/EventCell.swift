@@ -30,7 +30,7 @@ class EventCell: UITableViewCell {
             eventDescriptionLabel.text = event.title
             
             //eventImageView.setImageWith(event.)
-            locationLabel.text = event.location
+            locationLabel.text = "\(event.location ?? (0,0))"
             dateLabel.text = String(describing: event.startDate)
         }
     }

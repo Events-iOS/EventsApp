@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseDatabase
 
-class CreateEventViewController: UIViewController {
+class CreateEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var eventName: UITextField!
     @IBOutlet weak var eventLocation: UITextField!
 
@@ -21,7 +21,7 @@ class CreateEventViewController: UIViewController {
     @IBOutlet weak var eventImage: UIImageView!
     
     var ref: FIRDatabaseReference?
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,29 @@ class CreateEventViewController: UIViewController {
         let eventRef = self.ref?.child("events").childByAutoId()
         event.setEventId(eventId: (eventRef?.key)!)
         eventRef?.setValue(event.dict)
+    }
+    
+    @IBAction func onCamera(_ sender: Any) {
+        let vc = UIImagePickerController()
+        vc.delegate = self
+        vc.allowsEditing = true
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            vc.sourceType = .camera
+        }
+        else {
+            vc.sourceType = .photoLibrary
+        }
+        self.present(vc, animated: true) { 
+            // Do nothing for now
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        eventImage.image = image
+        
+        dismiss(animated: true, completion: nil)
     }
     
     

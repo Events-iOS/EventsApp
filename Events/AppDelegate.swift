@@ -23,6 +23,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FIRApp.configure()
         GMSServices.provideAPIKey("AIzaSyDVz4Zkkh7TrNTAC2Cmz8n1cv47zZHR23I")
         GMSPlacesClient.provideAPIKey("AIzaSyDVz4Zkkh7TrNTAC2Cmz8n1cv47zZHR23I")
+        if (FIRAuth.auth()?.currentUser != nil) {
+            self.window = UIWindow(frame: UIScreen.main.bounds)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialVC = storyboard.instantiateViewController(withIdentifier: "eventEntry") as!UINavigationController
+            self.window?.rootViewController = initialVC
+            self.window?.makeKeyAndVisible()
+            return true
+        }
         return true
     }
 
