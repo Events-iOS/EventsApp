@@ -34,7 +34,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     func fetchEvents() {
         let eventRef = ref.child("events")
         eventRef.observe(.value, with: { (snapshot) in
-            //print(snapshot)
+            self.events = []
             for snap in snapshot.children {
                 let event = snap as! FIRDataSnapshot
                 let eventObj = Event(dictionary: event.value as! [String: AnyObject])
