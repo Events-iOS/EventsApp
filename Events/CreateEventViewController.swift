@@ -43,6 +43,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         let eventRef = self.ref?.child("events").childByAutoId()
         event.setEventId(eventId: (eventRef?.key)!)
         eventRef?.setValue(event.dict)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func onCamera(_ sender: Any) {
