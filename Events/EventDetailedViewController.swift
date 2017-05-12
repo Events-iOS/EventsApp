@@ -10,15 +10,18 @@ import UIKit
 import GoogleMaps
 class EventDetailedViewController: UIViewController {
 
-    @IBOutlet weak var eventLocation: UILabel!
+    @IBOutlet weak var eventLocation: UIButton!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var eventDescription: UILabel!
     var event: Event!
+    
+    @IBOutlet weak var eventMapView: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: (event.location?.0)!, longitude: (event.location?.1)!, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
-        view = mapView
+        let camera = GMSCameraPosition.camera(withLatitude: (event.location?.0) ?? 0.0, longitude: (event.location?.1) ?? 0.0, zoom: 6.0)
+        let mapView = GMSMapView.map(withFrame: eventMapView.bounds, camera: camera)
         
         // Create a marker in the center of the app
         let marker = GMSMarker()
@@ -26,6 +29,8 @@ class EventDetailedViewController: UIViewController {
         marker.title = "Sydney"
         marker.snippet = "Australia"
         marker.map = mapView
+        
+        self.eventMapView = mapView
     }
 
     override func didReceiveMemoryWarning() {

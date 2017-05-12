@@ -6,7 +6,8 @@ target 'Events' do
   use_frameworks!
   # Pods for Events
 	 pod ‘Firebase/Auth’
-    pod 'Firebase/Database'
-	 pod 'GoogleMaps'
+     pod 'Firebase/Database'
+	 pod 'Firebase/Storage'
+     pod 'GoogleMaps'
 	 pod 'GooglePlaces'
 end

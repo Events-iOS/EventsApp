@@ -43,7 +43,7 @@ class Event: NSObject {
         if let endDateText = dictionary["endDate"] as? NSDate {
             endDate = endDateText
         }
-        if let idText = dictionary["eventid"] as? String {
+        if let idText = dictionary["id"] as? String {
             id = idText
         }
         if let location = dictionary["location"] as? (Double, Double) {

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseStorage
 
 class EventCell: UITableViewCell {
 
@@ -14,6 +16,8 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    
+    let dbRef: FIRDatabaseReference = FIRDatabase.database().reference()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,8 +32,13 @@ class EventCell: UITableViewCell {
     var event: Event! {
         didSet {
             eventDescriptionLabel.text = event.title
-            
-            //eventImageView.setImageWith(event.)
+            dbRef.child("events").child(event.id!).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
+                let imagePath = "events/\(self.event.id!)"
+                let storageRef = FIRStorage.storage().reference()
+                storageRef.child(imagePath).data(withMaxSize: 10*1024*1024, completion: { (data: Data?, error: Error?) in
+                    self.eventImageView.image = UIImage(data: data!)
+                })
+            }
             locationLabel.text = "\(event.location ?? (0,0))"
             dateLabel.text = String(describing: event.startDate)
         }

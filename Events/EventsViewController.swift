@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseStorage
 
 class EventsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
