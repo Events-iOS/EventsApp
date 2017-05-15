@@ -10,3 +10,12 @@ An app to view and attend events near you.
 - [ ] Events can be searched and filtered for in a collection / list view 
 - [ ] Clicking on an event produces a more detailed view
 - [ ] Recommender Systems: Recommend Events to Users based on their attend history
+
+
+## Video Walkthrough
+
+Here's a walkthrough of implemented user stories:
+
+<img src='https://github.com/Events-iOS/EventsApp/blob/master/demo_draft.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
