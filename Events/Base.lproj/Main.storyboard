@@ -274,6 +274,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="xXc-SJ-8Xp">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="s3G-Xl-14s">
+                            <connections>
+                                <action selector="onLogout:" destination="rkR-1S-cjM" id="4dx-Wi-dea"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="8K3-ZA-BCJ">
                             <connections>
                                 <segue destination="cE7-Ay-t6u" kind="show" id="fEW-oS-era"/>
@@ -282,6 +287,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="NYb-gy-bwh" id="CGv-ol-DH7"/>
+                        <segue destination="cCj-Mk-IOL" kind="show" identifier="logout" id="lBI-x4-zfD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BYG-qZ-E6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -575,7 +581,7 @@
             <objects>
                 <navigationController storyboardIdentifier="eventEntry" automaticallyAdjustsScrollViewInsets="NO" id="8Mp-74-Hld" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPd-h9-TPY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vPd-h9-TPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -593,7 +599,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCj-Mk-IOL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XcT-Se-oAq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XcT-Se-oAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

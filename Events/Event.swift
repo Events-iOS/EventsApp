@@ -23,7 +23,6 @@ class Event: NSObject {
     
     var attendees: [String]?
     var numRSVP: Int?
-//    var photos: [UIImage]
     
     var event: NSDictionary?
     

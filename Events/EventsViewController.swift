@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class EventsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -64,6 +65,17 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         return cell
     }
+    
+    @IBAction func onLogout(_ sender: Any) {
+        do  {
+            try FIRAuth.auth()?.signOut()
+            self.performSegue(withIdentifier: "logout", sender: nil)
+        }
+        catch is Error{
+            print("An error occurred")
+        }
+    }
+    
 
 
     // MARK: - Navigation
