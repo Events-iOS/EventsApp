@@ -8,6 +8,10 @@
 
 import UIKit
 import GoogleMaps
+import FirebaseDatabase
+import FirebaseStorage
+
+
 class EventDetailedViewController: UIViewController {
 
     @IBOutlet weak var eventLocation: UIButton!
@@ -17,6 +21,12 @@ class EventDetailedViewController: UIViewController {
     
     @IBOutlet weak var eventMapView: UIView!
     
+    var dbRef = FIRDatabase.database().reference()
+    var storageRef = FIRStorage.storage().reference()
+    
+    @IBOutlet weak var eventImageView: UIImageView!
+    
+    @IBOutlet weak var eventTitle: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +41,22 @@ class EventDetailedViewController: UIViewController {
         marker.map = mapView
         
         self.eventMapView = mapView
+        
+        fetchImage()
+    }
+    
+    func fetchImage() {
+        dbRef.child("events").child(event.id!).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
+            let imagePath = "events/\(self.event.id!)"
+            let storageRef = FIRStorage.storage().reference()
+            storageRef.child(imagePath).data(withMaxSize: 10*1024*1024, completion: { (data: Data?, error: Error?) in
+                self.eventImageView.image = UIImage(data: data!)
+            })
+        }
+    }
+    
+    func populatelabels() {
+        eventTitle.text = event.title
     }
 
     override func didReceiveMemoryWarning() {
