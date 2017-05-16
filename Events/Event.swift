@@ -66,6 +66,13 @@ class Event: NSObject {
         id = eventId
     }
     
+    class func formatDate(date: Date) -> String {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .short
+        formatter.dateFormat = "MMM d, yyyt"
+        return formatter.string(from: date)
+    }
+    
     
     var dict: [String:AnyObject] {
         return event as! [String : AnyObject]

@@ -16,8 +16,10 @@ class EventDetailedViewController: UIViewController {
 
     @IBOutlet weak var eventLocation: UIButton!
     @IBOutlet weak var eventDate: UILabel!
-    @IBOutlet weak var eventDescription: UILabel!
+    
     var event: Event!
+    
+    @IBOutlet weak var eventDescription: UILabel!
     
     @IBOutlet weak var eventMapView: UIView!
     
@@ -25,8 +27,10 @@ class EventDetailedViewController: UIViewController {
     var storageRef = FIRStorage.storage().reference()
     
     @IBOutlet weak var eventImageView: UIImageView!
+
     
     @IBOutlet weak var eventTitle: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +47,7 @@ class EventDetailedViewController: UIViewController {
         self.eventMapView = mapView
         
         fetchImage()
+        populatelabels()
     }
     
     func fetchImage() {
@@ -57,6 +62,7 @@ class EventDetailedViewController: UIViewController {
     
     func populatelabels() {
         eventTitle.text = event.title
+        eventDescription.text = event.eventDescription
     }
 
     override func didReceiveMemoryWarning() {
