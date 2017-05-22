@@ -10,8 +10,8 @@ import UIKit
 
 class Event: NSObject {
     var id: String?
-    var startDate: NSDate?
-    var endDate: NSDate?
+    var startDate: Date?
+    var endDate: Date?
     var title: String?
     var eventDescription: String?
     
@@ -36,11 +36,8 @@ class Event: NSObject {
         if let eventDescriptionText = dictionary["description"] as? String {
             eventDescription = eventDescriptionText
         }
-        if let startDateText = dictionary["start"] as? NSDate {
-            startDate = startDateText
-        }
-        if let endDateText = dictionary["endDate"] as? NSDate {
-            endDate = endDateText
+        if let endDateText = dictionary["endDate"] as? TimeInterval {
+            endDate = Date.init(timeIntervalSince1970: endDateText)
         }
         if let idText = dictionary["id"] as? String {
             id = idText
@@ -51,8 +48,8 @@ class Event: NSObject {
         if let max_capacityText = dictionary["maxCapacity"] as? Int {
             max_capacity = max_capacityText
         }
-        if let startDateText = dictionary["startDate"] as? NSDate {
-            startDate = startDateText
+        if let startDateText = dictionary["startDate"] as? TimeInterval {
+            startDate = Date.init(timeIntervalSince1970: startDateText)
         }
         if let titleText = dictionary["title"] as? String {
             title = titleText
@@ -69,7 +66,7 @@ class Event: NSObject {
     class func formatDate(date: Date) -> String {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
-        formatter.dateFormat = "MMM d, yyyt"
+        formatter.dateFormat = "MMM d / h:mm a"
         return formatter.string(from: date)
     }
     
