@@ -39,9 +39,7 @@ class EventDetailedViewController: UIViewController {
         self.eventMapView.camera = camera
         
         // Create a marker in the center of the app
-        var marker = GMSMarker()
-        print("Place Longitude:  \(event.locationLatitude)")
-        print("Place Latitude:  \(event.locationLongitude)")
+        let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: event.locationLatitude!, longitude: event.locationLongitude!)
         marker.title = event.locationName
         marker.snippet = "Australia"
