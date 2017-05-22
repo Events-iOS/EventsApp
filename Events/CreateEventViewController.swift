@@ -25,8 +25,8 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     
     
     
-    
-    
+    var locationName: String?
+    var mapsLocation: GMSPlace?
     var eventRef: FIRDatabaseReference?
     var ref: FIRDatabaseReference?
     
@@ -55,7 +55,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func onEventSaved(_ sender: Any) {
-        let eventDictionary : NSDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized", "location": eventLocation.text ?? "TBD", "description" : eventDescription.text ?? "No description","max_capacity" : maxCapacity.text ?? "100", "id" : eventRef!.key, "startDate" : startDate.timeIntervalSince1970, "endDate" : endDate.timeIntervalSince1970
+        let eventDictionary : NSDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized", "location_name": locationName ?? "TBD", "location_address": eventLocation.text, "description" : eventDescription.text ?? "No description","max_capacity" : maxCapacity.text ?? "100", "id" : eventRef!.key, "startDate" : startDate.timeIntervalSince1970, "endDate" : endDate.timeIntervalSince1970, "location_latitude": mapsLocation?.coordinate.latitude ?? 0.0, "location_longitude": mapsLocation?.coordinate.longitude ?? 0.0
         ]
         
         let event: Event = Event(dictionary: eventDictionary as! [String : AnyObject])
@@ -129,6 +129,8 @@ extension CreateEventViewController: GMSAutocompleteViewControllerDelegate {
         print("Place address: \(place.formattedAddress ?? nil)")
         print("Place attributions: \(place.attributions ?? nil)")
         eventLocation.text = place.formattedAddress
+        self.locationName = place.name
+        self.mapsLocation = place
         dismiss(animated: true, completion: nil)
     }
     

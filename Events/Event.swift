@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import GoogleMaps
+import GooglePlaces
 
 class Event: NSObject {
     var id: String?
@@ -16,8 +18,10 @@ class Event: NSObject {
     var eventDescription: String?
     
     var organizer: String?
-    var location: (Double, Double)?
-    var locationDescription: String?
+    var locationName: String?
+    var LocationAddress: String?
+    var locationLatitude: Double?
+    var locationLongitude: Double?
     var category: String?
     var max_capacity: Int?
     
@@ -42,8 +46,13 @@ class Event: NSObject {
         if let idText = dictionary["id"] as? String {
             id = idText
         }
-        if let location = dictionary["location"] as? (Double, Double) {
-            self.location = location
+        
+        if let location = dictionary["location_name"] as? String {
+            self.locationName = location
+        }
+        
+        if let locationAddress = dictionary["location_address"] as? String {
+            self.LocationAddress = locationAddress
         }
         if let max_capacityText = dictionary["maxCapacity"] as? Int {
             max_capacity = max_capacityText
@@ -56,6 +65,14 @@ class Event: NSObject {
         }
         else {
             title = "Untitled"
+        }
+        
+        if let locationLatitude = dictionary["location_latitude"] as? Double {
+            self.locationLatitude = locationLatitude
+        }
+        
+        if let locationLongitude = dictionary["location_longitude"] as? Double {
+            self.locationLongitude = locationLongitude
         }
     }
     

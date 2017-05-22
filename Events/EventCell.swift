@@ -40,7 +40,7 @@ class EventCell: UITableViewCell {
                     self.eventImageView.image = UIImage(data: data!)
                 })
             }
-            locationLabel.text = "\(event.location ?? (0,0))"
+            locationLabel.text = event.locationName ?? "TBD"
             if let eventDate = event.startDate {
                 dateLabel.text = Event.formatDate(date: eventDate)
             }
