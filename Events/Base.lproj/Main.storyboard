@@ -324,9 +324,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ws-1c-SV5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1166"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Mgu-yb-OwC">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mgu-yb-OwC">
                                                 <rect key="frame" x="10" y="10" width="150" height="150"/>
-                                                <color key="backgroundColor" red="0.36542847746005347" green="0.71579834804763343" blue="0.96621346473693848" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="YIS-h6-mlD"/>
                                                     <constraint firstAttribute="height" constant="150" id="sA4-Kl-meu"/>
@@ -354,6 +354,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                                 <connections>
+                                                    <action selector="onGoogleMapsButtonPressed:" destination="cE7-Ay-t6u" eventType="editingDidEnd" id="Llv-Pb-4dG"/>
                                                     <action selector="onLocationButtonPressed:" destination="cE7-Ay-t6u" eventType="editingDidEnd" id="bUf-U3-Hqq"/>
                                                 </connections>
                                             </textField>
@@ -537,9 +538,8 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="Ypr-Pf-BWH">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ypr-Pf-BWH">
                                 <rect key="frame" x="10" y="74" width="355" height="230"/>
-                                <color key="backgroundColor" red="0.36542847750000002" green="0.71579834799999997" blue="0.96621346470000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="VoR-4V-iym"/>
                                 </constraints>
@@ -695,7 +695,7 @@
             <objects>
                 <navigationController storyboardIdentifier="eventEntry" automaticallyAdjustsScrollViewInsets="NO" id="8Mp-74-Hld" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPd-h9-TPY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vPd-h9-TPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -713,7 +713,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCj-Mk-IOL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XcT-Se-oAq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XcT-Se-oAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -728,7 +728,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="25" height="25"/>
         <image name="stock" width="626" height="352"/>
     </resources>
     <inferredMetricsTieBreakers>
