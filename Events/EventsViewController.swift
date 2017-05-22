@@ -18,7 +18,6 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
     var ref: FIRDatabaseReference = FIRDatabase.database().reference()
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
