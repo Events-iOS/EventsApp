@@ -55,7 +55,9 @@ class EventDetailedViewController: UIViewController {
             let imagePath = "events/\(self.event.id!)"
             let storageRef = FIRStorage.storage().reference()
             storageRef.child(imagePath).data(withMaxSize: 10*1024*1024, completion: { (data: Data?, error: Error?) in
-                self.eventImageView.image = UIImage(data: data!)
+                if let data = data {
+                    self.eventImageView.image = UIImage(data: data)
+                }
             })
         }
     }
