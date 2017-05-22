@@ -17,6 +17,12 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
+    @IBOutlet weak var goingButton: UIButton!
+    @IBOutlet weak var maybeButton: UIButton!
+    @IBOutlet weak var notgoingButton: UIButton!
+    
+    
+    
     let dbRef: FIRDatabaseReference = FIRDatabase.database().reference()
     
     override func awakeFromNib() {
@@ -28,6 +34,37 @@ class EventCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         // Configure the view for the selected state
     }
+    
+    @IBAction func goingSelected(_ sender: Any) {
+        print("going selected")
+        goingButton.alpha = 1
+        
+        maybeButton.alpha = 0.4
+        notgoingButton.alpha = 0.4
+        
+        Event.RSVP(event: event, status: "Going")
+    }
+    @IBAction func maybeSelected(_ sender: Any) {
+        print("maybe selected")
+        maybeButton.alpha = 1
+        
+        goingButton.alpha = 0.4
+        notgoingButton.alpha = 0.4
+        
+        Event.RSVP(event: event, status: "Maybe")
+    }
+    @IBAction func notgoingSelected(_ sender: Any) {
+        print("not going selected")
+        notgoingButton.alpha = 1
+        
+        goingButton.alpha = 0.4
+        maybeButton.alpha = 0.4
+        
+        Event.RSVP(event: event, status: "Not Going")
+    }
+    
+    
+    
     
     var event: Event! {
         didSet {
