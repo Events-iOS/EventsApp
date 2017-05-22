@@ -31,12 +31,12 @@ class Event: NSObject {
     var attendees: [String]?
     var numRSVP: Int?
     
-    var event: NSDictionary?
+    var event: Dictionary<String, Any>?
     
     static let eventDBRef = FIRDatabase.database().reference().child("events")
     
-    init(dictionary: [String: AnyObject]) {
-        event = dictionary as NSDictionary
+    init(dictionary: Dictionary<String, Any>) {
+        event = dictionary as Dictionary<String, Any>
         category = dictionary["category"] as? String
         if let attendeesText = dictionary["attendees"] as? [String] {
             attendees = attendeesText
@@ -97,7 +97,7 @@ class Event: NSObject {
     }
     
     
-    var dict: [String:AnyObject] {
-        return event as! [String : AnyObject]
+    var dict: Dictionary<String, Any> {
+        return event as! Dictionary<String, Any>
     }
 }

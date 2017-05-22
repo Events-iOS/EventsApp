@@ -55,8 +55,17 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func onEventSaved(_ sender: Any) {
-        let eventDictionary : NSDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized", "location_name": locationName ?? "TBD", "location_address": eventLocation.text, "description" : eventDescription.text ?? "No description","max_capacity" : maxCapacity.text ?? "100", "id" : eventRef!.key, "startDate" : startDate.timeIntervalSince1970, "endDate" : endDate.timeIntervalSince1970, "location_latitude": mapsLocation?.coordinate.latitude ?? 0.0, "location_longitude": mapsLocation?.coordinate.longitude ?? 0.0
-        ]
+        var eventDictionary : Dictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized"
+        ] as [String : Any]
+        eventDictionary["location_name"] = locationName ?? "TBD"
+        eventDictionary["location_address"] = eventLocation.text
+        eventDictionary["description"] = eventDescription.text ?? "No description"
+        eventDictionary["max_capacity"] = maxCapacity.text ?? "100"
+        eventDictionary["id"] = eventRef!.key
+        eventDictionary["startDate"] = startDate.timeIntervalSince1970
+        eventDictionary["endDate"] = endDate.timeIntervalSince1970
+        eventDictionary["location_latitude"] =  mapsLocation?.coordinate.latitude ?? 0.0
+        eventDictionary["location_longitude"] =  mapsLocation?.coordinate.longitude ?? 0.0
         
         let event: Event = Event(dictionary: eventDictionary as! [String : AnyObject])
         eventRef?.setValue(event.dict)
