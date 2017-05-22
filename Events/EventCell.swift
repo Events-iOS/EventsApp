@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import FirebaseAuth
 
 class EventCell: UITableViewCell {
 
@@ -20,6 +21,8 @@ class EventCell: UITableViewCell {
     @IBOutlet weak var goingButton: UIButton!
     @IBOutlet weak var maybeButton: UIButton!
     @IBOutlet weak var notgoingButton: UIButton!
+    
+    let currentUser = FIRAuth.auth()?.currentUser?.uid
     
     
     
@@ -36,34 +39,54 @@ class EventCell: UITableViewCell {
     }
     
     @IBAction func goingSelected(_ sender: Any) {
-        print("going selected")
-        goingButton.alpha = 1
-        
-        maybeButton.alpha = 0.4
-        notgoingButton.alpha = 0.4
-        
+        setGoing()
         Event.RSVP(event: event, status: "Going")
     }
-    @IBAction func maybeSelected(_ sender: Any) {
-        print("maybe selected")
-        maybeButton.alpha = 1
-        
-        goingButton.alpha = 0.4
+    
+    func setGoing() {
+        goingButton.alpha = 1
+        maybeButton.alpha = 0.4
         notgoingButton.alpha = 0.4
-        
+    }
+    
+    @IBAction func maybeSelected(_ sender: Any) {
+        setMaybe()
         Event.RSVP(event: event, status: "Maybe")
     }
-    @IBAction func notgoingSelected(_ sender: Any) {
-        print("not going selected")
-        notgoingButton.alpha = 1
-        
+    
+    func setMaybe() {
+        maybeButton.alpha = 1
         goingButton.alpha = 0.4
-        maybeButton.alpha = 0.4
-        
+        notgoingButton.alpha = 0.4
+    }
+    
+    @IBAction func notgoingSelected(_ sender: Any) {
+        setNotGoing()
         Event.RSVP(event: event, status: "Not Going")
     }
     
+    func setNotGoing() {
+        notgoingButton.alpha = 1
+        goingButton.alpha = 0.4
+        maybeButton.alpha = 0.4
+    }
     
+    
+    func displayRSVP(id: String) {
+        dbRef.child("events").child(id).child("attendees").child(currentUser!).observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+            let status = "\(snapshot.value!)"
+            print(status)
+            if status == "Going" {
+                self.setGoing()
+            }
+            if status == "Maybe" {
+                self.setMaybe()
+            }
+            if status == "Not Going" {
+                self.setNotGoing()
+            }
+        }
+    }
     
     
     var event: Event! {
@@ -81,6 +104,7 @@ class EventCell: UITableViewCell {
             if let eventDate = event.startDate {
                 dateLabel.text = Event.formatDate(date: eventDate)
             }
+            displayRSVP(id: event.id!)
         }
     }
 }
