@@ -215,6 +215,9 @@
                                                             <state key="normal" title="Going">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="goingSelected:" destination="aCq-Kj-P72" eventType="touchUpInside" id="AOV-dN-KL5"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awh-6L-PZu">
                                                             <rect key="frame" x="73.5" y="0.0" width="74" height="30"/>
@@ -222,6 +225,9 @@
                                                             <state key="normal" title="Maybe">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="maybeSelected:" destination="aCq-Kj-P72" eventType="touchUpInside" id="yUJ-af-dKP"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dDi-rL-UQL">
                                                             <rect key="frame" x="147.5" y="0.0" width="73.5" height="30"/>
@@ -229,6 +235,9 @@
                                                             <state key="normal" title="Not Going">
                                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             </state>
+                                                            <connections>
+                                                                <action selector="notgoingSelected:" destination="aCq-Kj-P72" eventType="touchUpInside" id="aUy-oT-Lvm"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                     <constraints>
@@ -264,7 +273,10 @@
                                             <outlet property="dateLabel" destination="i5m-3i-TVr" id="tly-DS-hFI"/>
                                             <outlet property="eventDescriptionLabel" destination="49b-PJ-tLZ" id="St9-sG-Eqv"/>
                                             <outlet property="eventImageView" destination="yVV-4R-uLS" id="RmP-u5-5Lc"/>
+                                            <outlet property="goingButton" destination="fJm-YL-foF" id="d7C-XC-x7K"/>
                                             <outlet property="locationLabel" destination="Sh2-HB-CRX" id="Pt0-9N-fcB"/>
+                                            <outlet property="maybeButton" destination="awh-6L-PZu" id="hHO-fF-h76"/>
+                                            <outlet property="notgoingButton" destination="dDi-rL-UQL" id="4P0-sY-KT7"/>
                                             <segue destination="6rM-If-hjD" kind="show" identifier="detailsSegue" id="sO4-19-Trj"/>
                                         </connections>
                                     </tableViewCell>
@@ -683,7 +695,7 @@
             <objects>
                 <navigationController storyboardIdentifier="eventEntry" automaticallyAdjustsScrollViewInsets="NO" id="8Mp-74-Hld" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPd-h9-TPY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vPd-h9-TPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -701,7 +713,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCj-Mk-IOL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XcT-Se-oAq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XcT-Se-oAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

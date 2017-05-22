@@ -9,6 +9,9 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import FirebaseAuth
+import FirebaseDatabase
+
 
 class Event: NSObject {
     var id: String?
@@ -29,6 +32,8 @@ class Event: NSObject {
     var numRSVP: Int?
     
     var event: NSDictionary?
+    
+    static let eventDBRef = FIRDatabase.database().reference().child("events")
     
     init(dictionary: [String: AnyObject]) {
         event = dictionary as NSDictionary
@@ -85,6 +90,10 @@ class Event: NSObject {
         formatter.dateStyle = .short
         formatter.dateFormat = "MMM d / h:mm a"
         return formatter.string(from: date)
+    }
+    
+    class func RSVP(event: Event, status: String) {
+        eventDBRef.child(event.id!).child("attendees").child((FIRAuth.auth()?.currentUser?.uid)!).setValue(status)
     }
     
     
