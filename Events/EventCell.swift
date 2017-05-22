@@ -36,6 +36,7 @@ class EventCell: UITableViewCell {
                 let imagePath = "events/\(self.event.id!)"
                 let storageRef = FIRStorage.storage().reference()
                 storageRef.child(imagePath).data(withMaxSize: 10*1024*1024, completion: { (data: Data?, error: Error?) in
+                    // Deep, we got a segfault for this. just check it out.. :)
                     self.eventImageView.image = UIImage(data: data!)
                 })
             }

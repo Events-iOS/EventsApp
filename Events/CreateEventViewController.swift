@@ -9,6 +9,8 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseStorage
+import GooglePlaces
+import GoogleMaps
 
 class CreateEventViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var eventName: UITextField!
@@ -25,7 +27,6 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     
     var ref: FIRDatabaseReference?
     
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +38,14 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+  
+    // When user presses on Location pressed
+    @IBAction func onLocationButtonPressed(_ sender: Any) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        present(autocompleteController, animated: true, completion: nil)
     }
     
     @IBAction func onEventSaved(_ sender: Any) {
@@ -89,15 +98,39 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+}
 
+extension CreateEventViewController: GMSAutocompleteViewControllerDelegate {
+    // Handle the user's selection.
+    public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        print("Place name: \(place.name)")
+        print("Place address: \(place.formattedAddress ?? nil)")
+        print("Place attributions: \(place.attributions ?? nil)")
+        eventLocation.text = place.formattedAddress
+        dismiss(animated: true, completion: nil)
+    }
+    
+    public func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        // TODO: handle the error.
+        print("Error: ", error.localizedDescription)
+    }
+    
+    // User canceled the operation.
+    public func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    // Turn the network activity indicator on and off again.
+    public func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+    
+    public func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+    
 }

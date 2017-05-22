@@ -9,5 +9,6 @@ target 'Events' do
      pod 'Firebase/Database'
 	 pod 'Firebase/Storage'
      pod 'GoogleMaps'
-	 pod 'GooglePlaces'
+	pod 'GooglePlaces'
+	pod ‘GooglePlacePicker’
 end
