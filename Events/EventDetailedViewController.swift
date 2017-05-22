@@ -21,7 +21,7 @@ class EventDetailedViewController: UIViewController {
     
     @IBOutlet weak var eventDescription: UILabel!
     
-    @IBOutlet weak var eventMapView: UIView!
+
     
     var dbRef = FIRDatabase.database().reference()
     var storageRef = FIRStorage.storage().reference()
@@ -31,21 +31,22 @@ class EventDetailedViewController: UIViewController {
     
     @IBOutlet weak var eventTitle: UILabel!
     
+    @IBOutlet weak var eventMapView: GMSMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude) ?? 0.0, longitude: (event.locationLongitude) ?? 0.0, zoom: 6.0)
-        let mapView = GMSMapView.map(withFrame: eventMapView.bounds, camera: camera)
+        let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude!) , longitude: (event.locationLongitude!), zoom: 12.0)
+        self.eventMapView.camera = camera
         
         // Create a marker in the center of the app
-        let marker = GMSMarker()
+        var marker = GMSMarker()
+        print("Place Longitude:  \(event.locationLatitude)")
+        print("Place Latitude:  \(event.locationLongitude)")
         marker.position = CLLocationCoordinate2D(latitude: event.locationLatitude!, longitude: event.locationLongitude!)
         marker.title = event.locationName
         marker.snippet = "Australia"
-        marker.map = mapView
-        
-        self.eventMapView = mapView
-        
+        marker.map = eventMapView
+    
         fetchImage()
         populatelabels()
     }
@@ -85,5 +86,4 @@ class EventDetailedViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

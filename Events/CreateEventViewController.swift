@@ -67,7 +67,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         eventDictionary["location_latitude"] =  mapsLocation?.coordinate.latitude ?? 0.0
         eventDictionary["location_longitude"] =  mapsLocation?.coordinate.longitude ?? 0.0
         
-        let event: Event = Event(dictionary: eventDictionary as! [String : AnyObject])
+        let event: Event = Event(dictionary: eventDictionary as [String : AnyObject])
         eventRef?.setValue(event.dict)
         self.navigationController?.popViewController(animated: true)
     }

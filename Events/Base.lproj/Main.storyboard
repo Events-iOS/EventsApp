@@ -578,7 +578,7 @@
                         <outlet property="eventDescription" destination="itc-L7-hEv" id="UN5-Bc-uNh"/>
                         <outlet property="eventImageView" destination="Ypr-Pf-BWH" id="cE5-lQ-e9T"/>
                         <outlet property="eventLocation" destination="O1C-lB-cX7" id="Kxm-v5-ibF"/>
-                        <outlet property="eventMapView" destination="TpM-0A-VB9" id="mDF-eM-95r"/>
+                        <outlet property="eventMapView" destination="TpM-0A-VB9" id="P0W-GJ-8JX"/>
                         <outlet property="eventTitle" destination="2u8-zJ-zhz" id="MxI-mz-QbN"/>
                     </connections>
                 </viewController>
