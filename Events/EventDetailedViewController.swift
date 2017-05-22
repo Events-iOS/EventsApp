@@ -63,6 +63,9 @@ class EventDetailedViewController: UIViewController {
     func populatelabels() {
         eventTitle.text = event.title
         eventDescription.text = event.eventDescription
+        if let startDate = event.startDate {
+            eventDate.text = Event.formatDate(date: startDate)
+        }
     }
 
     override func didReceiveMemoryWarning() {

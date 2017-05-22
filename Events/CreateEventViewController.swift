@@ -23,11 +23,17 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var maxCapacity: UITextField!
     @IBOutlet weak var eventImage: UIImageView!
     
-    var eventRef: FIRDatabaseReference?
     
+    
+    
+    
+    var eventRef: FIRDatabaseReference?
     var ref: FIRDatabaseReference?
     
-    
+
+    var startDate : Date = Date()
+    var endDate : Date = Date()
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
@@ -49,8 +55,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func onEventSaved(_ sender: Any) {
-        let eventDictionary : NSDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized", "location": eventLocation.text ?? "TBD", "description" : eventDescription.text ?? "No description",
-                                              "max_capacity" : maxCapacity.text ?? "100", "id" : eventRef!.key
+        let eventDictionary : NSDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized", "location": eventLocation.text ?? "TBD", "description" : eventDescription.text ?? "No description","max_capacity" : maxCapacity.text ?? "100", "id" : eventRef!.key, "startDate" : startDate.timeIntervalSince1970, "endDate" : endDate.timeIntervalSince1970
         ]
         
         let event: Event = Event(dictionary: eventDictionary as! [String : AnyObject])
@@ -98,6 +103,19 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         
     }
     
+
+    @IBAction func eventStartTimeSelected(_ sender: UIDatePicker) {
+        self.startDate = sender.date
+    }
+    
+    @IBAction func eventEndTimeSelected(_ sender: UIDatePicker) {
+        self.endDate = sender.date
+    }
+    
+    
+    
+    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

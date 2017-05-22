@@ -380,6 +380,9 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="516597694.31668597">
                                                     <!--2017-05-16 03:21:34 +0000-->
                                                 </date>
+                                                <connections>
+                                                    <action selector="eventStartTimeSelected:" destination="cE7-Ay-t6u" eventType="valueChanged" id="UIp-Ve-c8T"/>
+                                                </connections>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sne-wE-Gcc">
                                                 <rect key="frame" x="10" y="385" width="75" height="21"/>
@@ -393,6 +396,9 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="516597694.31668597">
                                                     <!--2017-05-16 03:21:34 +0000-->
                                                 </date>
+                                                <connections>
+                                                    <action selector="eventEndTimeSelected:" destination="cE7-Ay-t6u" eventType="valueChanged" id="ibv-vD-9wU"/>
+                                                </connections>
                                             </datePicker>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QWr-xH-wvW">
                                                 <rect key="frame" x="10" y="480" width="34" height="21"/>
@@ -677,7 +683,7 @@
             <objects>
                 <navigationController storyboardIdentifier="eventEntry" automaticallyAdjustsScrollViewInsets="NO" id="8Mp-74-Hld" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vPd-h9-TPY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPd-h9-TPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -695,7 +701,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCj-Mk-IOL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XcT-Se-oAq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XcT-Se-oAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

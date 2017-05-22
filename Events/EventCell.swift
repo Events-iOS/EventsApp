@@ -41,7 +41,9 @@ class EventCell: UITableViewCell {
                 })
             }
             locationLabel.text = "\(event.location ?? (0,0))"
-            dateLabel.text = String(describing: event.startDate)
+            if let eventDate = event.startDate {
+                dateLabel.text = Event.formatDate(date: eventDate)
+            }
         }
     }
 }
