@@ -67,6 +67,10 @@ class EventDetailedViewController: UIViewController {
         if let startDate = event.startDate {
             eventDate.text = Event.formatDate(date: startDate)
         }
+        if let locName = event.locationName {
+            print(locName)
+            eventLocation.setTitle(locName, for: .normal)
+        }
     }
 
     override func didReceiveMemoryWarning() {

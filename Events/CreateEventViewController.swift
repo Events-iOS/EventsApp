@@ -135,8 +135,8 @@ extension CreateEventViewController: GMSAutocompleteViewControllerDelegate {
     // Handle the user's selection.
     public func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         print("Place name: \(place.name)")
-        print("Place address: \(place.formattedAddress ?? nil)")
-        print("Place attributions: \(place.attributions ?? nil)")
+        print("Place address: \(String(describing: place.formattedAddress ?? nil))")
+        print("Place attributions: \(String(describing: place.attributions ?? nil))")
         eventLocation.text = place.formattedAddress
         self.locationName = place.name
         self.mapsLocation = place
