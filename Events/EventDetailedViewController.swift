@@ -35,7 +35,7 @@ class EventDetailedViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude!) , longitude: (event.locationLongitude!), zoom: 12.0)
+        let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude!) , longitude: (event.locationLongitude!), zoom: 14.0)
         self.eventMapView.camera = camera
         
         // Create a marker in the center of the app

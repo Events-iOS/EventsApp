@@ -23,6 +23,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     @IBOutlet weak var maxCapacity: UITextField!
     @IBOutlet weak var eventImage: UIImageView!
     
+    @IBOutlet weak var mapView: GMSMapView!
     
     
     var locationName: String?
@@ -140,6 +141,18 @@ extension CreateEventViewController: GMSAutocompleteViewControllerDelegate {
         eventLocation.text = place.formattedAddress
         self.locationName = place.name
         self.mapsLocation = place
+        
+        let camera = GMSCameraPosition.camera(withLatitude: (place.coordinate.latitude) , longitude: (place.coordinate.longitude), zoom: 14.0)
+        self.mapView.isUserInteractionEnabled = true
+        self.mapView.camera = camera
+        
+        // Create a marker in the center of the app
+        let marker = GMSMarker()
+        marker.position = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
+        marker.snippet = place.name
+        marker.title = place.formattedAddress
+        marker.map = mapView
+        
         dismiss(animated: true, completion: nil)
     }
     
