@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseDatabase
+import FirebaseAuth
 
 class User: NSObject {
     var uid: String!
@@ -62,4 +63,18 @@ class User: NSObject {
             }
         }
     }
+    
+    
+    class func currentUser(completion: @escaping (_ result: User)->()) {
+        let curr = FIRAuth.auth()?.currentUser
+        dbRef.child("users").child((curr?.uid)!).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
+            let firstName = snap.value(forKey: "first_name")
+            let lastName = snap.value(forKey:"last_name")
+            let email = snap.value(forKey: "email")
+            let user = User(dictionary: ["first_name" : firstName, "last_name" : lastName, "email" : email, "uid" : curr?.uid])
+            completion(user)
+        }
+    }
+    
+    
 }

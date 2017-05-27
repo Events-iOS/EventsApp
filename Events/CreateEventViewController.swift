@@ -56,8 +56,8 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func onEventSaved(_ sender: Any) {
-        var eventDictionary : Dictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized"
-        ] as [String : Any]
+        var eventDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized"
+        ] as Dictionary<String, Any>
         eventDictionary["location_name"] = locationName ?? "TBD"
         eventDictionary["location_address"] = eventLocation.text
         eventDictionary["description"] = eventDescription.text ?? "No description"
@@ -67,10 +67,12 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         eventDictionary["endDate"] = endDate.timeIntervalSince1970
         eventDictionary["location_latitude"] =  mapsLocation?.coordinate.latitude ?? 0.0
         eventDictionary["location_longitude"] =  mapsLocation?.coordinate.longitude ?? 0.0
-        
-        let event: Event = Event(dictionary: eventDictionary as [String : AnyObject])
-        eventRef?.setValue(event.dict)
-        self.navigationController?.popViewController(animated: true)
+        User.currentUser(completion: { (user: User) in
+            eventDictionary["organizer"] = user.firstName + " " + user.lastName
+            let event = Event(dictionary: eventDictionary)
+            self.eventRef?.setValue(event.dict)
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     @IBAction func onCamera(_ sender: Any) {
