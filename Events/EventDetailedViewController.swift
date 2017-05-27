@@ -14,7 +14,8 @@ import FirebaseStorage
 
 class EventDetailedViewController: UIViewController {
 
-    @IBOutlet weak var eventLocation: UIButton!
+    @IBOutlet weak var eventLocation: UILabel!
+
     @IBOutlet weak var eventDate: UILabel!
     
     var event: Event!
@@ -32,6 +33,10 @@ class EventDetailedViewController: UIViewController {
     @IBOutlet weak var eventTitle: UILabel!
     
     @IBOutlet weak var eventMapView: GMSMapView!
+    
+    @IBOutlet weak var eventOrganizer: UILabel!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,8 +73,10 @@ class EventDetailedViewController: UIViewController {
             eventDate.text = Event.formatDate(date: startDate)
         }
         if let locName = event.locationName {
-            print(locName)
-            eventLocation.setTitle(locName, for: .normal)
+            eventLocation.text = locName
+        }
+        if let organizer = event.organizer {
+            eventOrganizer.text = organizer
         }
     }
 

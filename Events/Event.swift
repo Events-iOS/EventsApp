@@ -80,6 +80,10 @@ class Event: NSObject {
         if let locationLongitude = dictionary["location_longitude"] as? Double {
             self.locationLongitude = locationLongitude
         }
+        
+        if let organizer = dictionary["organizer"] as? String {
+            self.organizer = organizer
+        }
     }
     
     func setEventId(eventId: String) {
