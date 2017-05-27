@@ -190,7 +190,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         metaData.contentType = "image/jpg"
         var filePath = "events/\(eventRef!.key)"
         if let event = event {
-            filePath = "events/\(event.id)"
+            filePath = "events/\(event.id!)"
         }
         storageRef.child(filePath).put(data as Data, metadata: metaData) { (meta: FIRStorageMetadata?, error: Error?) in
             if let error = error {
