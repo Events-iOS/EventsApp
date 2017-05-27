@@ -128,6 +128,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             event?.max_capacity = Int(maxCapacity.text!)
             event?.locationLatitude = mapsLocation?.coordinate.latitude ?? 0.0
             event?.locationLongitude = mapsLocation?.coordinate.longitude ?? 0.0
+            event?.LocationAddress = eventLocation.text
             print(event!.dict)
             newEventRef.setValue(event!.dict)
             
