@@ -35,6 +35,10 @@ class Event: NSObject {
     
     static let eventDBRef = FIRDatabase.database().reference().child("events")
     
+    convenience init(eventCopy: Event) {
+        self.init(dictionary: eventCopy.dict)
+    }
+    
     init(dictionary: Dictionary<String, Any>) {
         super.init()
         event = dictionary as Dictionary<String, Any>
@@ -106,7 +110,7 @@ class Event: NSObject {
     
     
     var dict: Dictionary<String, Any> {
-        return ["title" : self.title, "description" : self.eventDescription, "organizer" : self.organizer, "id" : self.id, "location_name" : self.locationName]
+        return event!
     }
     
     func returnRSVP(attendees: Dictionary<String, String>) -> Int {

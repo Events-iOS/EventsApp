@@ -58,6 +58,19 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             eventCategory.text = event.category
             maxCapacity.text = "\(event.max_capacity)"
             eventLocation.text = event.LocationAddress
+            
+            let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude)! , longitude: (event.locationLatitude)!, zoom: 14.0)
+            self.bigMapView.isUserInteractionEnabled = true
+            self.bigMapView.camera = camera
+            eventImage.isHidden = true
+            mapView.isHidden = true
+            
+            let marker = GMSMarker()
+            marker.position = CLLocationCoordinate2D(latitude: event.locationLatitude!, longitude: event.locationLongitude!)
+            marker.snippet = event.locationName
+            marker.title = event.LocationAddress
+            marker.map = bigMapView
+            
             dbRef.child("events").child((event.id!)).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
                 let imagePath = "events/\(self.event?.id!)"
                 let storageRef = FIRStorage.storage().reference()
@@ -110,7 +123,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             event?.max_capacity = Int(maxCapacity.text!)
             event?.id = eventRef?.key
             print(event!.dict)
-            self.eventRef?.setValue(event!.dict)
+            self.eventRef?.child((event?.id)!).updateChildValues(event!.dict)
             
             self.performSegue(withIdentifier: "eventEditted", sender: nil)
             return
