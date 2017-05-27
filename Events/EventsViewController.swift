@@ -70,7 +70,7 @@ class EventsViewController: UIViewController, UITableViewDataSource, UITableView
             try FIRAuth.auth()?.signOut()
             self.performSegue(withIdentifier: "logout", sender: nil)
         }
-        catch is Error{
+        catch{
             print("An error occurred")
         }
     }

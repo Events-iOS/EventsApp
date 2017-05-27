@@ -68,10 +68,11 @@ class User: NSObject {
     class func currentUser(completion: @escaping (_ result: User)->()) {
         let curr = FIRAuth.auth()?.currentUser
         dbRef.child("users").child((curr?.uid)!).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
-            let firstName = snap.value(forKey: "first_name")
-            let lastName = snap.value(forKey:"last_name")
-            let email = snap.value(forKey: "email")
-            let user = User(dictionary: ["first_name" : firstName, "last_name" : lastName, "email" : email, "uid" : curr?.uid])
+            let userDict = snap.value! as! NSDictionary
+            let firstName = userDict["first_name"]
+            let lastName = userDict["last_name"]
+            let email = userDict["email"]
+            let user = User(dictionary: ["first_name" : firstName ?? "Unknown", "last_name" : lastName ?? "Unknown", "email" : email ?? "Unknown", "uid" : curr?.uid ?? ""])
             completion(user)
         }
     }

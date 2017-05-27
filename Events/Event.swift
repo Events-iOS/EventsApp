@@ -106,7 +106,7 @@ class Event: NSObject {
     
     
     var dict: Dictionary<String, Any> {
-        return event as! Dictionary<String, Any>
+        return event!
     }
     
     func returnRSVP(attendees: Dictionary<String, String>) -> Int {
