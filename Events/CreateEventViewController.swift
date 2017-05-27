@@ -59,7 +59,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             maxCapacity.text = event.max_capacity
             eventLocation.text = event.LocationAddress
             
-            let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude)! , longitude: (event.locationLatitude)!, zoom: 14.0)
+            let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude)! , longitude: (event.locationLongitude)!, zoom: 14.0)
             self.bigMapView.isUserInteractionEnabled = true
             self.bigMapView.camera = camera
             eventImage.isHidden = true
@@ -67,6 +67,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             
             let marker = GMSMarker()
             marker.position = CLLocationCoordinate2D(latitude: event.locationLatitude!, longitude: event.locationLongitude!)
+            print("latitude: \(marker.position.latitude) longitude: \(marker.position.longitude)")
             marker.snippet = event.locationName
             marker.title = event.LocationAddress
             marker.map = bigMapView
@@ -124,10 +125,10 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             event?.title = eventName.text
             event?.eventDescription = eventDescription.text
             event?.category = eventCategory.text
-            event?.locationName = locationName
+            event?.locationName = locationName ?? updatedEvent.locationName
             event?.max_capacity = maxCapacity.text
-            event?.locationLatitude = mapsLocation?.coordinate.latitude ?? 0.0
-            event?.locationLongitude = mapsLocation?.coordinate.longitude ?? 0.0
+            event?.locationLatitude = mapsLocation?.coordinate.latitude ?? updatedEvent.locationLatitude
+            event?.locationLongitude = mapsLocation?.coordinate.longitude ?? updatedEvent.locationLongitude
             event?.LocationAddress = eventLocation.text
             print(event!.dict)
             newEventRef.setValue(event!.dict)
