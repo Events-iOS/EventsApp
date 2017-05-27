@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import FirebaseDatabase
 import FirebaseStorage
-
+import FirebaseAuth
 
 class EventDetailedViewController: UIViewController {
 
@@ -56,6 +56,24 @@ class EventDetailedViewController: UIViewController {
     
         fetchImage()
         populatelabels()
+        displayRSVP(id: event!.id!)
+    }
+    
+    func displayRSVP(id: String) {
+        let currentUser = FIRAuth.auth()?.currentUser?.uid
+        dbRef.child("events").child(id).child("attendees").child(currentUser!).observeSingleEvent(of: .value) { (snapshot: FIRDataSnapshot) in
+            let status = "\(snapshot.value!)"
+            print(status)
+            if status == "Going" {
+                self.setGoing()
+            }
+            if status == "Maybe" {
+                self.setMaybe()
+            }
+            if status == "Not Going" {
+                self.setNotGoing()
+            }
+        }
     }
     
     func fetchImage() {
