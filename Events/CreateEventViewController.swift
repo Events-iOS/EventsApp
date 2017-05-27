@@ -117,13 +117,17 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBAction func onEventSaved(_ sender: Any) {
         if let updatedEvent = event {
+            print(updatedEvent.dict)
+            let newEventRef = FIRDatabase.database().reference().child("events").child(updatedEvent.id!)
             event?.title = eventName.text
+            event?.eventDescription = eventDescription.text
             event?.category = eventCategory.text
             event?.locationName = locationName
             event?.max_capacity = Int(maxCapacity.text!)
-            event?.id = eventRef?.key
+            event?.locationLatitude = mapsLocation?.coordinate.latitude ?? 0.0
+            event?.locationLongitude = mapsLocation?.coordinate.longitude ?? 0.0
             print(event!.dict)
-            self.eventRef?.child((event?.id)!).updateChildValues(event!.dict)
+            newEventRef.setValue(event!.dict)
             
             self.performSegue(withIdentifier: "eventEditted", sender: nil)
             return

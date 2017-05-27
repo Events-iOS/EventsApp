@@ -92,6 +92,7 @@ class EventCell: UITableViewCell {
     var event: Event! {
         didSet {
             eventDescriptionLabel.text = event.title
+            if let event = event {
             dbRef.child("events").child(event.id!).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
                 let imagePath = "events/\(self.event.id!)"
                 let storageRef = FIRStorage.storage().reference()
@@ -107,6 +108,7 @@ class EventCell: UITableViewCell {
                 dateLabel.text = Event.formatDate(date: eventDate)
             }
             displayRSVP(id: event.id!)
+            }
         }
     }
 }

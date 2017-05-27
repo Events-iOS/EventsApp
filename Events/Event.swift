@@ -67,7 +67,7 @@ class Event: NSObject {
         if let locationAddress = dictionary["location_address"] as? String {
             self.LocationAddress = locationAddress
         }
-        if let max_capacityText = dictionary["maxCapacity"] as? Int {
+        if let max_capacityText = dictionary["max_capacity"] as? Int {
             max_capacity = max_capacityText
         }
         if let startDateText = dictionary["startDate"] as? TimeInterval {
@@ -110,7 +110,7 @@ class Event: NSObject {
     
     
     var dict: Dictionary<String, Any> {
-        return event!
+        return ["title" : title, "category" : category, "attendees" : attendees, "description" : eventDescription, "max_capacity" : max_capacity, "id" : id, "location_longitude" : locationLongitude, "location_latitude" : locationLatitude, "organizer" : organizer, "location_address" : LocationAddress, "location_name" : locationName, "startDate" : startDate?.timeIntervalSince1970, "endDate" : endDate!.timeIntervalSince1970]
     }
     
     func returnRSVP(attendees: Dictionary<String, String>) -> Int {
