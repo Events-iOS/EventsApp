@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cCj-Mk-IOL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="cCj-Mk-IOL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -661,6 +661,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="heZ-2T-vsV" id="zXd-uI-NZn"/>
                         <outlet property="eventDate" destination="ZTh-vk-aHr" id="BHX-92-0Jb"/>
                         <outlet property="eventDescription" destination="itc-L7-hEv" id="UN5-Bc-uNh"/>
                         <outlet property="eventImageView" destination="Ypr-Pf-BWH" id="cE5-lQ-e9T"/>
@@ -743,6 +744,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="0.25098040700000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="oIO-4k-Dep" secondAttribute="trailing" constant="40" id="1Y5-b6-ctu"/>
                             <constraint firstItem="MdJ-qv-Qs3" firstAttribute="top" secondItem="jFn-K9-aQo" secondAttribute="bottom" constant="20" id="3ti-PO-YHm"/>
@@ -766,6 +768,9 @@
                             <constraint firstItem="73d-dK-Sxl" firstAttribute="top" secondItem="6nV-El-Jav" secondAttribute="bottom" constant="40" id="slJ-q2-K4v"/>
                             <constraint firstItem="WHt-uG-Wi0" firstAttribute="centerX" secondItem="0J4-ge-c63" secondAttribute="centerX" id="xoI-1q-GBF"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="g4D-7p-8Hx" appends="YES" id="goB-8g-9kQ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="1l5-79-vvn"/>
                     <connections>
@@ -779,6 +784,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNa-9J-4PO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="g4D-7p-8Hx">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="TNH-mc-MB6" id="DaB-Zf-beS"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2528.8000000000002" y="875.71214392803608"/>
         </scene>
@@ -823,8 +833,8 @@
         <image name="stock" width="626" height="352"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="ZFP-sc-DNW"/>
         <segue reference="eJM-2o-ePR"/>
-        <segue reference="fEW-oS-era"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>

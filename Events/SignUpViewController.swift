@@ -87,6 +87,11 @@ class SignUpViewController: UIViewController {
         }
         }
     }
+    
+    @IBAction func dismissKeyboard(_ sender: Any) {
+        self.view.endEditing(true)
+    }
+    
 
     /*
     // MARK: - Navigation

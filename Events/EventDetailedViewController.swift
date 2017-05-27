@@ -41,6 +41,7 @@ class EventDetailedViewController: UIViewController {
     @IBOutlet weak var goingButton: UIButton!
     @IBOutlet weak var maybeButton: UIButton!
     @IBOutlet weak var notGoingButton: UIButton!
+    @IBOutlet weak var editButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +58,15 @@ class EventDetailedViewController: UIViewController {
         fetchImage()
         populatelabels()
         displayRSVP(id: event!.id!)
+        
+        User.currentUser { (user: User) in
+            let name = user.firstName + " " + user.lastName
+            if self.event.organizer != name {
+                self.navigationItem.rightBarButtonItem = nil
+            }
+        }
+        
+        
     }
     
     func displayRSVP(id: String) {
