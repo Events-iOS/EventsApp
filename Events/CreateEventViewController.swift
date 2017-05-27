@@ -25,6 +25,8 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBOutlet weak var bigMapView: GMSMapView!
+    
     
     var locationName: String?
     var mapsLocation: GMSPlace?
@@ -39,6 +41,12 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         eventRef = self.ref?.child("events").childByAutoId()
+        if let eventImage = eventImage.image {
+            bigMapView.isHidden = true
+        } else {
+            mapView.isHidden = true
+            eventImage.isHidden = true
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -89,10 +97,16 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             // Do nothing for now
         }
         
+        
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        self.bigMapView.isHidden = true
+        self.mapView.isHidden = false
+        self.eventImage.isHidden = false
+        
+        
         eventImage.image = image
         dismiss(animated: true, completion: nil)
         
@@ -144,16 +158,27 @@ extension CreateEventViewController: GMSAutocompleteViewControllerDelegate {
         self.locationName = place.name
         self.mapsLocation = place
         
-        let camera = GMSCameraPosition.camera(withLatitude: (place.coordinate.latitude) , longitude: (place.coordinate.longitude), zoom: 14.0)
-        self.mapView.isUserInteractionEnabled = true
-        self.mapView.camera = camera
-        
         // Create a marker in the center of the app
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: place.coordinate.latitude, longitude: place.coordinate.longitude)
         marker.snippet = place.name
         marker.title = place.formattedAddress
-        marker.map = mapView
+        
+        let camera = GMSCameraPosition.camera(withLatitude: (place.coordinate.latitude) , longitude: (place.coordinate.longitude), zoom: 14.0)
+        
+        if let eventImage = eventImage.image {
+            bigMapView.isHidden = true
+            self.mapView.isUserInteractionEnabled = true
+            self.mapView.camera = camera
+            marker.map = mapView
+            
+        } else {
+            self.bigMapView.isUserInteractionEnabled = true
+            self.bigMapView.camera = camera
+            eventImage.isHidden = true
+            mapView.isHidden = true
+            marker.map = bigMapView
+        }
         
         dismiss(animated: true, completion: nil)
     }

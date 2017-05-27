@@ -324,6 +324,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4ws-1c-SV5">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1166"/>
                                         <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-lq-MBn" customClass="GMSMapView">
+                                                <rect key="frame" x="168" y="10" width="197" height="150"/>
+                                                <color key="backgroundColor" red="0.91916708140000003" green="0.1982517234" blue="0.1982517234" alpha="0.93634952910000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                            </view>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Mgu-yb-OwC">
                                                 <rect key="frame" x="10" y="10" width="150" height="150"/>
                                                 <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -332,9 +336,10 @@
                                                     <constraint firstAttribute="height" constant="150" id="sA4-Kl-meu"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gpr-lq-MBn" customClass="GMSMapView">
-                                                <rect key="frame" x="168" y="10" width="197" height="150"/>
-                                                <color key="backgroundColor" red="0.91916708140000003" green="0.1982517234" blue="0.1982517234" alpha="0.93634952910000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvP-Qo-PGr" customClass="GMSMapView">
+                                                <rect key="frame" x="8" y="12" width="355" height="150"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cjD-9F-kol">
                                                 <rect key="frame" x="10" y="170" width="355" height="30"/>
@@ -495,6 +500,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
+                        <outlet property="bigMapView" destination="gvP-Qo-PGr" id="gf7-Vh-Y0o"/>
                         <outlet property="eventCategory" destination="i0i-ZE-nGv" id="qIp-8b-d3Y"/>
                         <outlet property="eventDescription" destination="01h-tn-qRz" id="uZQ-e1-w6w"/>
                         <outlet property="eventImage" destination="Mgu-yb-OwC" id="cjS-r6-ut7"/>
@@ -543,12 +549,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organizer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsO-8I-JAp">
-                                <rect key="frame" x="28" y="311" width="75" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.97571976819999995" green="1" blue="0.96067859840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date / Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZTh-vk-aHr">
                                 <rect key="frame" x="10" y="403" width="89" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -565,6 +565,12 @@
                                 <rect key="frame" x="10" y="463" width="226" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Organizer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SsO-8I-JAp">
+                                <rect key="frame" x="10" y="313" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.97571976819999995" green="1" blue="0.96067859840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
