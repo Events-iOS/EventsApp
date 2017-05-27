@@ -601,7 +601,6 @@
                                         </state>
                                         <connections>
                                             <action selector="goingButtonSelected:" destination="6rM-If-hjD" eventType="touchUpInside" id="O5P-9J-xRS"/>
-                                            <action selector="goingSelected:" destination="aCq-Kj-P72" eventType="touchUpInside" id="cHG-Gk-Qor"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8i-hv-7yp">
