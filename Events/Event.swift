@@ -42,6 +42,9 @@ class Event: NSObject {
         if let attendeesDictionary = dictionary["attendees"] as? Dictionary<String, String> {
             attendees = attendeesDictionary
             numRSVP = returnRSVP(attendees: attendeesDictionary)
+        } else {
+            attendees = [:]
+            numRSVP = 0
         }
         if let eventDescriptionText = dictionary["description"] as? String {
             eventDescription = eventDescriptionText

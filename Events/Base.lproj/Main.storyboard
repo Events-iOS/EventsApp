@@ -561,6 +561,12 @@
                                 <color key="textColor" red="0.97571976819999995" green="1" blue="0.96067859840000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Attending" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndT-IH-b3S">
+                                <rect key="frame" x="10" y="463" width="226" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196078430000002" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -575,8 +581,11 @@
                             <constraint firstItem="2u8-zJ-zhz" firstAttribute="top" secondItem="Ypr-Pf-BWH" secondAttribute="bottom" constant="5" id="Xdx-dV-EEJ"/>
                             <constraint firstItem="Ypr-Pf-BWH" firstAttribute="top" secondItem="Yu0-Vg-xOc" secondAttribute="bottom" constant="10" id="ZSy-An-HVU"/>
                             <constraint firstItem="eRn-XN-YiD" firstAttribute="top" secondItem="ZTh-vk-aHr" secondAttribute="bottom" constant="10" id="gtT-iw-l4u"/>
+                            <constraint firstItem="ndT-IH-b3S" firstAttribute="leading" secondItem="zbs-Hx-nqj" secondAttribute="leadingMargin" constant="-6" id="hVp-JU-ptm"/>
                             <constraint firstItem="itc-L7-hEv" firstAttribute="leading" secondItem="ZTh-vk-aHr" secondAttribute="leading" id="kNu-HR-CSC"/>
+                            <constraint firstItem="ndT-IH-b3S" firstAttribute="top" secondItem="eRn-XN-YiD" secondAttribute="bottom" constant="8" id="pjo-f6-NDu"/>
                             <constraint firstItem="ZTh-vk-aHr" firstAttribute="leading" secondItem="eRn-XN-YiD" secondAttribute="leading" id="vkR-EM-FSz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ndT-IH-b3S" secondAttribute="trailing" constant="123" id="wKw-AH-B1w"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Dmp-ag-xar"/>
@@ -588,6 +597,7 @@
                         <outlet property="eventMapView" destination="TpM-0A-VB9" id="P0W-GJ-8JX"/>
                         <outlet property="eventOrganizer" destination="SsO-8I-JAp" id="xQP-jK-rHf"/>
                         <outlet property="eventTitle" destination="2u8-zJ-zhz" id="MxI-mz-QbN"/>
+                        <outlet property="numRSVPLabel" destination="ndT-IH-b3S" id="1n7-Tg-fRL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rOq-Td-YoB" userLabel="First Responder" sceneMemberID="firstResponder"/>

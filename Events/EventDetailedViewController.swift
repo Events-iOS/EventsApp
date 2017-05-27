@@ -22,6 +22,7 @@ class EventDetailedViewController: UIViewController {
     
     @IBOutlet weak var eventDescription: UILabel!
     
+    @IBOutlet weak var numRSVPLabel: UILabel!
 
     
     var dbRef = FIRDatabase.database().reference()
@@ -77,6 +78,16 @@ class EventDetailedViewController: UIViewController {
         }
         if let organizer = event.organizer {
             eventOrganizer.text = organizer
+        }
+        
+        if let rsvp_num = event.numRSVP {
+            if rsvp_num == 0 {
+                numRSVPLabel.text = "Nobody is coming :("
+            } else {
+                numRSVPLabel.text = "\(rsvp_num) attending"
+            }
+        } else {
+            numRSVPLabel.text = "Autism"
         }
     }
 
