@@ -56,7 +56,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             eventName.text = event.title
             eventDescription.text = event.eventDescription
             eventCategory.text = event.category
-            maxCapacity.text = "\(event.max_capacity)"
+            maxCapacity.text = event.max_capacity
             eventLocation.text = event.LocationAddress
             
             let camera = GMSCameraPosition.camera(withLatitude: (event.locationLatitude)! , longitude: (event.locationLatitude)!, zoom: 14.0)
@@ -125,7 +125,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
             event?.eventDescription = eventDescription.text
             event?.category = eventCategory.text
             event?.locationName = locationName
-            event?.max_capacity = Int(maxCapacity.text!)
+            event?.max_capacity = maxCapacity.text
             event?.locationLatitude = mapsLocation?.coordinate.latitude ?? 0.0
             event?.locationLongitude = mapsLocation?.coordinate.longitude ?? 0.0
             event?.LocationAddress = eventLocation.text

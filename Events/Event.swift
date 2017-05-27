@@ -26,7 +26,7 @@ class Event: NSObject {
     var locationLatitude: Double?
     var locationLongitude: Double?
     var category: String?
-    var max_capacity: Int?
+    var max_capacity: String?
     
     var attendees: Dictionary<String, String>?
     var numRSVP: Int?
@@ -67,7 +67,7 @@ class Event: NSObject {
         if let locationAddress = dictionary["location_address"] as? String {
             self.LocationAddress = locationAddress
         }
-        if let max_capacityText = dictionary["max_capacity"] as? Int {
+        if let max_capacityText = dictionary["max_capacity"] as? String {
             max_capacity = max_capacityText
         }
         if let startDateText = dictionary["startDate"] as? TimeInterval {
