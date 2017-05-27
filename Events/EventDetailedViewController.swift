@@ -144,7 +144,6 @@ class EventDetailedViewController: UIViewController {
         if segue.identifier == "editEvent" {
             let editView = segue.destination as! CreateEventViewController
             editView.event = event
-            
         }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.

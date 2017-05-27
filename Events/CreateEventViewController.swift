@@ -81,6 +81,8 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
                     }
                 })
             }
+        } else {
+            print("Sandeep, wtf?")
         }
         if let eventImage = eventImage.image {
             bigMapView.isHidden = true
