@@ -137,13 +137,16 @@ class EventDetailedViewController: UIViewController {
         notGoingButton.alpha = 0.4
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editEvent" {
+            let editView = segue.destination as! CreateEventViewController
+            editView.event = event
+            
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 }

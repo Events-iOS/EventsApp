@@ -106,7 +106,7 @@ class Event: NSObject {
     
     
     var dict: Dictionary<String, Any> {
-        return event!
+        return ["title" : self.title, "description" : self.eventDescription, "organizer" : self.organizer, "id" : self.id, "location_name" : self.locationName]
     }
     
     func returnRSVP(attendees: Dictionary<String, String>) -> Int {

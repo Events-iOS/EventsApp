@@ -31,6 +31,8 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBOutlet weak var saveButton: UIButton!
 
+    
+    var event: Event?
 
     var locationName: String?
     var mapsLocation: GMSPlace?
@@ -43,12 +45,30 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
 
     @IBOutlet weak var startDatepicker: UIDatePicker!
     @IBOutlet weak var endDatepicker: UIDatePicker!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         eventRef = self.ref?.child("events").childByAutoId()
-
+        if let event = event {
+            let dbRef = FIRDatabase.database().reference()
+            eventName.text = event.title
+            eventDescription.text = event.eventDescription
+            eventCategory.text = event.category
+            maxCapacity.text = "\(event.max_capacity)"
+            eventLocation.text = event.LocationAddress
+            dbRef.child("events").child((event.id!)).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
+                let imagePath = "events/\(self.event?.id!)"
+                let storageRef = FIRStorage.storage().reference()
+                storageRef.child(imagePath).data(withMaxSize: 10*1024*1024, completion: { (data: Data?, error: Error?) in
+                    // Deep, we got a segfault for this. just check it out.. :)
+                    if let data = data {
+                        self.eventImage.image = UIImage(data: data)
+                    }
+                })
+            }
+        }
         if let eventImage = eventImage.image {
             bigMapView.isHidden = true
         } else {
@@ -83,6 +103,18 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     }
 
     @IBAction func onEventSaved(_ sender: Any) {
+        if let updatedEvent = event {
+            event?.title = eventName.text
+            event?.category = eventCategory.text
+            event?.locationName = locationName
+            event?.max_capacity = Int(maxCapacity.text!)
+            event?.id = eventRef?.key
+            print(event!.dict)
+            self.eventRef?.setValue(event!.dict)
+            
+            self.performSegue(withIdentifier: "eventEditted", sender: nil)
+            return
+        }
         var eventDictionary = ["title" : eventName.text ?? "Untitled", "category" : eventCategory.text ?? "Uncategorized"
         ] as Dictionary<String, Any>
         eventDictionary["location_name"] = locationName ?? "TBD"
