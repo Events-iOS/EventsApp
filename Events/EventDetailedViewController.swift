@@ -38,6 +38,9 @@ class EventDetailedViewController: UIViewController {
     @IBOutlet weak var eventOrganizer: UILabel!
     
     
+    @IBOutlet weak var goingButton: UIButton!
+    @IBOutlet weak var maybeButton: UIButton!
+    @IBOutlet weak var notGoingButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +70,25 @@ class EventDetailedViewController: UIViewController {
         }
     }
     
+    
+    @IBAction func goingButtonSelected(_ sender: Any) {
+        setGoing()
+        Event.RSVP(event: event, status: "Going")
+
+    }
+    
+    
+    @IBAction func maybeButtonSelected(_ sender: Any) {
+        setMaybe()
+        Event.RSVP(event: event, status: "Maybe")
+    }
+    
+    
+    @IBAction func notGoingButtonSelected(_ sender: Any) {
+        setNotGoing()
+        Event.RSVP(event: event, status: "Not Going")
+
+    }
     func populatelabels() {
         eventTitle.text = event.title
         eventDescription.text = event.eventDescription
@@ -96,6 +118,24 @@ class EventDetailedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    func setGoing() {
+        goingButton.alpha = 1
+        maybeButton.alpha = 0.4
+        notGoingButton.alpha = 0.4
+    }
+
+    func setNotGoing() {
+        notGoingButton.alpha = 1
+        goingButton.alpha = 0.4
+        maybeButton.alpha = 0.4
+    }
+    
+    func setMaybe() {
+        maybeButton.alpha = 1
+        goingButton.alpha = 0.4
+        notGoingButton.alpha = 0.4
+    }
 
     // MARK: - Navigation
 
