@@ -25,6 +25,7 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var mapView: GMSMapView!
     
+    @IBOutlet weak var saveButton: UIButton!
     
     var locationName: String?
     var mapsLocation: GMSPlace?
@@ -46,6 +47,10 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
         
         startDatepicker.setValue(UIColor.white, forKey: "textColor")
         endDatepicker.setValue(UIColor.white, forKey: "textColor")
+        
+        saveButton.layer.cornerRadius = 5
+        saveButton.layer.borderWidth = 2.0
+        saveButton.layer.borderColor = UIColor.white.cgColor
         
         // Do any additional setup after loading the view.
     }
