@@ -35,10 +35,18 @@ class CreateEventViewController: UIViewController, UIImagePickerControllerDelega
     var startDate : Date = Date()
     var endDate : Date = Date()
         
+    @IBOutlet weak var startDatepicker: UIDatePicker!
+    @IBOutlet weak var endDatepicker: UIDatePicker!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = FIRDatabase.database().reference()
         eventRef = self.ref?.child("events").childByAutoId()
+        
+        
+        startDatepicker.setValue(UIColor.white, forKey: "textColor")
+        endDatepicker.setValue(UIColor.white, forKey: "textColor")
+        
         // Do any additional setup after loading the view.
     }
 
