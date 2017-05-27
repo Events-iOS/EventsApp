@@ -655,7 +655,7 @@
                     <navigationItem key="navigationItem" id="Dmp-ag-xar">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="heZ-2T-vsV">
                             <connections>
-                                <segue destination="cE7-Ay-t6u" kind="presentation" identifier="editEvent" id="ZFP-sc-DNW"/>
+                                <segue destination="cE7-Ay-t6u" kind="show" identifier="editEvent" id="ZFP-sc-DNW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -786,7 +786,7 @@
             <objects>
                 <navigationController storyboardIdentifier="eventEntry" automaticallyAdjustsScrollViewInsets="NO" id="8Mp-74-Hld" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vPd-h9-TPY">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vPd-h9-TPY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -804,7 +804,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cCj-Mk-IOL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="XcT-Se-oAq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XcT-Se-oAq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

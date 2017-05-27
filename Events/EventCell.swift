@@ -95,11 +95,16 @@ class EventCell: UITableViewCell {
             if let event = event {
             dbRef.child("events").child(event.id!).observeSingleEvent(of: .value) { (snap: FIRDataSnapshot) in
                 let imagePath = "events/\(self.event.id!)"
+                print(imagePath)
                 let storageRef = FIRStorage.storage().reference()
                 storageRef.child(imagePath).data(withMaxSize: 10*1024*1024, completion: { (data: Data?, error: Error?) in
                     // Deep, we got a segfault for this. just check it out.. :)
+                    print(data)
                     if let data = data {
                         self.eventImageView.image = UIImage(data: data)
+                    }
+                    else {
+                        print(error)
                     }
                 })
             }
