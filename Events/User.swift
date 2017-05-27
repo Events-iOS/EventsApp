@@ -72,7 +72,7 @@ class User: NSObject {
             let firstName = userDict["first_name"]
             let lastName = userDict["last_name"]
             let email = userDict["email"]
-            let user = User(dictionary: ["first_name" : firstName, "last_name" : lastName, "email" : email, "uid" : curr?.uid])
+            let user = User(dictionary: ["first_name" : firstName ?? "Unknown", "last_name" : lastName ?? "Unknown", "email" : email ?? "Unknown", "uid" : curr?.uid ?? ""])
             completion(user)
         }
     }
